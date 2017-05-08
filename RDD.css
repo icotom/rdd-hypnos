@@ -1,21 +1,23 @@
-div.sheet-tab-content { display: none; }
-input.sheet-tab1:checked ~ div.sheet-tab1,
-input.sheet-tab2:checked ~ div.sheet-tab2,
-input.sheet-tab3:checked ~ div.sheet-tab3,
-input.sheet-tab4:checked ~ div.sheet-tab4,
-input.sheet-tab5:checked ~ div.sheet-tab5,
+.sheet-npc,
+.sheet-pc{
+    display: none;
+  }
+
+.sheet-npc_toggle[value="0"] ~ .sheet-pc,
+.sheet-npc_toggle[value="1"] ~ .sheet-npc,
 {
     display: block;
 }
-input.sheet-secondary_tab1:checked ~ div.sheet-secondary_tab1,
-input.sheet-secondary_tab2:checked ~ div.sheet-secondary_tab2,
-input.sheet-secondary_tab3:checked ~ div.sheet-secondary_tab3,
-input.sheet-secondary_tab4:checked ~ div.sheet-secondary_tab4,
-input.sheet-secondary_tab5:checked ~ div.sheet-secondary_tab5,
+
+div.sheet-npc-tab-content { display: none; }
+input.sheet-npc-tab1:checked ~ div.sheet-npc-tab1,
+input.sheet-npc-tab2:checked ~ div.sheet-npc-tab2,
+input.sheet-npc-tab3:checked ~ div.sheet-npc-tab3,
 {
-    display:block;
+    display: block;
 }
-input.sheet-tab{
+
+input.sheet-npc-tab{
     width:150px;
     height: 20px;
     top: 5px;
@@ -24,7 +26,7 @@ input.sheet-tab{
     cursor: pointer;
     z-index: 1;
 }
-input.sheet-tab::before{
+input.sheet-npc-tab::before{
     content: attr(title);
 
     border-radius:.5em;
@@ -38,31 +40,73 @@ input.sheet-tab::before{
     height: 20px;
     font-size: 18px;
 }
-input.sheet-tab:checked::before{
+input.sheet-npc-tab:checked::before{
+    background:#009900;
+    color:black;
+    border-radius:.5em;
+    border:2px solid black;
+}
+
+
+div.sheet-pc-tab-content { display: none; }
+input.sheet-pc-tab1:checked ~ div.sheet-pc-tab1,
+input.sheet-pc-tab2:checked ~ div.sheet-pc-tab2,
+input.sheet-pc-tab3:checked ~ div.sheet-pc-tab3,
+input.sheet-pc-tab4:checked ~ div.sheet-pc-tab4,
+input.sheet-pc-tab5:checked ~ div.sheet-pc-tab5,
+{
+    display: block;
+}
+
+input.sheet-pc-tab{
+    width:150px;
+    height: 20px;
+    top: 5px;
+    left: 6px;
+    margin: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+input.sheet-pc-tab::before{
+    content: attr(title);
+
+    border-radius:.5em;
+    border:2px solid black;
+    text-align: center;
+    display: inline-block;
+    
+    background: black;
+    color:white;
+    width: 150px;
+    height: 20px;
+    font-size: 18px;
+}
+input.sheet-pc-tab:checked::before{
     background:#CCCCCC;
     color:black;
     border-radius:.5em;
     border:2px solid black;
 }
 .sheet-bulle{
-    border-radius:50%;
+    border-radius:;
+    border: 2px solid gray;
     text-align:right;
     font-weight:bolder;
 }
 
 .charsheet{
 
-    font-family:Comic Sans, Comic Sans MS, cursive;
+    font-family: 'Roboto', sans-serif;
 }
 .sheet-title{
     display:inline-block;
 }
 .sheet-title-separate{
-    font-family:Comic Sans, Comic Sans MS, cursive;
-    padding:30px;
-    font-style:oblique;
+    font-family: serif;
+    padding:15px;
+    font-style:;
     font-weight:bolder;
-    font-size:22px;
+    font-size:20px;
     text-align:center;
     text-transform:uppercase;
 
@@ -75,12 +119,26 @@ input.sheet-tab:checked::before{
     border:none;
     font-size:30px;
     font-weight:bolder;
-    font-style:oblique;
+    font-style:;
     text-transform:capitalize;
-    font-family:Comic Sans, Comic Sans MS, cursive;
+    font-family: serif;
     text-align:center;
 }
-    
+
+.sheet-npcname{
+    margin-top : 20px;
+    margin-left : 20px;
+    height:35px;
+    width: 380px;
+    border:none;
+    font-size:22px;
+    font-weight:bolder;
+    font-style:;
+    text-transform:capitalize;
+    font-family: serif;
+    text-align:center;
+}
+
 .sheet-rolltemplate-RDD table {
     border-collapse:separate;
     border-spacing:0px ;
@@ -89,21 +147,19 @@ input.sheet-tab:checked::before{
     -moz-border-radius: 4px;
     border-radius: 10px;
     background: linear-gradient(to right bottom, #F6F4E6 60%, #C4C3B8 );
-    padding:10px;
-    margin:5px;
+    padding:8px;
+    margin:4px;
 }
 .sheet-rolltemplate-RDD th {
-    font-family:Comic Sans, Comic Sans MS, cursive;
-    font-size:20px;
-    padding:10px;
-    font-style:oblique;
+    font-size:18px;
+    padding:8px;
+    font-style:normal;
     text-transform:uppercase;
 }
 .sheet-rolltemplate-RDD td {
-    padding:3px;
-    font-size:12px;
-    font-family:Comic Sans, Comic Sans MS, cursive;
-    font-style:oblique;
+    padding:2px;
+    font-size:10px;
+    font-style:normal;
     text-transform:uppercase;
 }
 
@@ -112,8 +168,275 @@ input.sheet-tab:checked::before{
     border-width: 1px;
     border-color: #BEAAA0;
     border-style: solid;
-    border-radius: 50%;
+    border-radius: 30%;
 }
 
+.sheet-rolltemplate-COMBAT table {
+    border-collapse:separate;
+    border-spacing:0px ;
+    background-color:#A0A49E,
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #F6F4E6 60%, #C4C3B8 );
+    padding:8px;
+    margin:4px;
+}
+.sheet-rolltemplate-COMBAT th {
+    font-size:18px;
+    padding:8px;
+    font-style:normal;
+    text-transform:uppercase;
+}
+.sheet-rolltemplate-COMBAT td {
+    padding:2px;
+    font-size:10px;
+    font-style:normal;
+    text-transform:uppercase;
+}
 
+.sheet-rolltemplate-COMBAT .inlinerollresult {
+    background-color: rgba(255,255,255,0.9);
+    border-width: 1px;
+    border-color: #BEAAA0;
+    border-style: solid;
+    border-radius: 30%;
+}
 
+.sheet-rolltemplate-NPC-Skill table {
+    border-collapse:separate;
+    border-spacing:0px ;
+    background-color:#A0A49E,
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #ffffcc 60%, #ffe6ff);
+    padding:8px;
+    margin:4px;
+}
+.sheet-rolltemplate-NPC-Skill th {
+    font-size:18px;
+    padding:8px;
+    font-style:normal;
+    text-transform:uppercase;
+}
+.sheet-rolltemplate-NPC-Skill td {
+    padding:2px;
+    font-size:10px;
+    font-style:normal;
+    text-transform:uppercase;
+}
+
+.sheet-rolltemplate-NPC-Skill .inlinerollresult {
+    background-color: rgba(255,255,255,0.9);
+    border-width: 1px;
+    border-color: #BEAAA0;
+    border-style: solid;
+    border-radius: 30%;
+}
+
+.sheet-rolltemplate-Entite table {
+    border-collapse:separate;
+    border-spacing:0px ;
+    background-color:#A9D0F5,
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #003300 10%, #004d00 );
+    padding:10px;
+    margin:5px;
+}
+.sheet-rolltemplate-Entite th {
+    font-size:18px;
+    padding:8px;
+    font-style:normal;
+    color: whitesmoke;
+    text-transform:uppercase;
+}
+.sheet-rolltemplate-Entite td {
+    padding:2px;
+    font-size:10px;
+    font-style:normal;
+    color: whitesmoke;
+}
+
+.sheet-rolltemplate-Entite .inlinerollresult {
+    background-color: rgba(0,77,0,0.9);
+    border-width: 1px;
+    border-color: #008000;
+    border-style: solid;
+    border-radius: 30%;
+}
+
+.sheet-rolltemplate-Animal table {
+    border-collapse:separate;
+    border-spacing:0px ;
+    background-color:#A9D0F5,
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #CC6600 25%, #F2EB91 );
+    padding:10px;
+    margin:5px;
+}
+.sheet-rolltemplate-Animal th {
+    font-size:18px;
+    padding:8px;
+    font-style:normal;
+    color: whitesmoke;
+    text-transform:uppercase;
+}
+.sheet-rolltemplate-Animal td {
+    padding:2px;
+    font-size:10px;
+    font-style:normal;
+    color: whitesmoke;
+}
+
+.sheet-rolltemplate-Animal .inlinerollresult {
+    background-color: rgba(204,102,0,0.9);
+    border-width: 1px;
+    border-color: #008000;
+    border-style: solid;
+    border-radius: 30%;
+}
+
+.sheet-rolltemplate-SKILLS table {
+    border-collapse:separate;
+    border-spacing:0px ;
+    background-color:#A0A49E,
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #F6F4E6 60%, #C4C3B8 );
+    padding:8px;
+    margin:4px;
+}
+.sheet-rolltemplate-SKILLS th {
+    font-size:18px;
+    padding:8px;
+    font-style:normal;
+    text-transform:uppercase;
+}
+.sheet-rolltemplate-SKILLS td {
+    padding:2px;
+    font-size:10px;
+    font-style:normal;
+    text-transform:uppercase;
+}
+
+.sheet-rolltemplate-SKILLS .inlinerollresult {
+    background-color: rgba(255,255,255,0.9);
+    border-width: 1px;
+    border-color: #BEAAA0;
+    border-style: solid;
+    border-radius: 30%;
+}
+
+.sheet-rolltemplate-STRESS table {
+    border-collapse:separate;
+    border-spacing:0px ;
+    background-color:#A9D0F5,
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #F6F4E6 60%, #C4C3B8 );
+    padding:10px;
+    margin:5px;
+}
+.sheet-rolltemplate-STRESS th {
+    font-size:18px;
+    padding:8px;
+    font-style:normal;
+    text-transform:uppercase;
+}
+.sheet-rolltemplate-STRESS td {
+    padding:2px;
+    font-size:10px;
+    font-style:normal;
+    text-transform:uppercase;
+}
+
+.sheet-rolltemplate-STRESS .inlinerollresult {
+    background-color: rgba(255,255,255,0.9);
+    border-width: 1px;
+    border-color: #BEAAA0;
+    border-style: solid;
+    border-radius: 30%;
+}
+
+/* Generic */
+.sheet-rolltemplate-pf_generic table {
+	width: 100%;
+	background-color: #FFF;
+	border:2px solid #000;
+	border-spacing: 0;
+	border-collapse: separate;
+	border-radius: 5px;
+  	-moz-box-shadow: 2px 2px 5px #000;
+	-webkit-box-shadow: 2px 2px 5px #000;
+	box-shadow:2px 2px 5px #000;
+	overflow: hidden;
+}
+
+.sheet-rolltemplate-pf_generic .sheet-header {
+	background-color: #000;
+	margin: 2px 25px 2px 25px;
+	border: 1px solid #000;
+	color: #FFF;
+	font-family:"Helvetica Neue",Helvetica,sans-serif;
+	font-size: 1.1em;
+	padding: 5px;
+}
+
+.sheet-rolltemplate-pf_generic .sheet-header-image {
+	float: right;
+	padding: 2px 0px 2px 2px;
+	vertical-align: middle;
+}
+
+.sheet-rolltemplate-pf_generic .sheet-header a {
+	color: #FFF;
+	text-decoration: underline;
+}
+
+.sheet-rolltemplate-pf_generic td {
+	padding: 1px 1px 1px 5px;
+	line-height: 1.1em;
+	text-align:right;
+	vertical-align:sub;
+}
+.sheet-rolltemplate-pf_generic tr:nth-child(odd) {
+	background-color: #D3D3D3;
+}
+
+.sheet-rolltemplate-pf_generic td:nth-child(odd) {
+	text-align: left;
+	font-weight:bold;
+}
+
+.sheet-rolltemplate-pf_generic .inlinerollresult  {
+	color: #FFF;
+	background-color: #000;
+	border-color: #000;
+	min-width: 1em;
+	text-align: center;
+	display: inline-block;
+	margin-left: 1px;
+	padding:0px;
+}
+
+.sheet-rolltemplate-pf_generic .inlinerollresult.fullcrit {
+	color: #FFF;
+	background-color: #3FB315;
+}
+
+.sheet-rolltemplate-pf_generic .inlinerollresult.fullfail {
+	color: #FFF;
+	background-color: #B31515;
+}
+
+.sheet-rolltemplate-pf_generic .inlinerollresult.importantroll {
+	color: #FFF;
+	background-color: #4A57ED;
+}
