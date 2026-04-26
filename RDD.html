@@ -675,8 +675,6 @@
         </div><!-- fin colonne gauche -->
 
         <div style="width:550px;  margin-left:560px; margin-top:-700px;padding: 15px;"><!-- colonne droite -->
-        <div style="background: transparent url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/bg_npc_portrait.jpg) no-repeat; width:550px; height: 593px; border: none;margin-top:5px">
-        </div>
         <table>
         <tr>
         <td class="sheet-center">Vie</td><td><input class="bulle" type="number" name="attr_vie"></td>
@@ -690,14 +688,12 @@
             <td style="text-align:center;padding:0px 5px;">Encombrement</td><td><input class="bulle"  type="number" name="attr_encombr"></td>
         </tr>
         <tr>
-        <td colspan="3" style="text-align:center; background-color: lightgrey;font-weight: bold;">Etat Général</td><td style="text-align:center;background-color: lightgrey;"></td><td style="padding:;text-align:center;background-color: lightgrey;"><input class="bulle"  type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled"></td>
+        <td colspan="3" style="text-align:center; background-color: lightgrey;font-weight: bold;">Etat Général</td><td style="text-align:center;background-color: lightgrey;"></td><td style="text-align:center;background-color: lightgrey;"><input class="bulle"  type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled"></td>
         </tr>
         </table>
-        <div style="margin-top:;">Background</div>
-        <textarea style="width:450px;height:100px;" name="attr_bg"></textarea>
-        </div><!-- fin colonne droite -->
-
-      <div style="width:450px;margin-left:5px;margin-top:-150px"><!-- Armes -->
+        <div style="margin-top:5px;">Background</div>
+        <textarea style="width:520px;height:250px;" name="attr_bg"></textarea>
+        <div style="width:520px;margin-top:15px;"><!-- Armes -->
                     <div class="title-separate">Armement</div>
                     <table class="sheet-center">
                     <tr>
@@ -708,6 +704,33 @@
                     <td style="width:30px;text-align:left">Exp</td>
                     </tr>
                     </table>
+
+                <table class="sheet-center">
+                <tr>
+                    <td style="width:225px;text-align:left;">Esquive</td>
+                    <td style="width:30px;"><input type="number" name="attr_esquive_niv" value="-6"></td>
+                    <td style="width:55px;"><input type="number" name="attr_esquive_init"></td>
+                    <td style="width:57px;"><input type="number" name="attr_esquive_dom"></td>
+                    <td style="width:30px;"><input type="number" name="attr_esquive_exp"></td>
+                    <td><button type="roll" class="sheet-roll-btn" title="Esquive" name="roll_Esquive" value="&{template:COMBAT}{{name=Esquive}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{esquive_niv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Dérobée,@{derobee_value}|Mêlée,@{melee_value}|AGILITÉ,@{agilite_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button></td>
+                </tr>
+                <tr>
+                    <td style="width:225px;text-align:left;">Corps-à-corps</td>
+                    <td style="width:30px;"><input type="number" name="attr_corpsacorps_niv" value="-6"></td>
+                    <td style="width:55px;"><input type="number" name="attr_corpsacorps_init"></td>
+                    <td style="width:57px;"><input type="number" name="attr_corpsacorps_dom"></td>
+                    <td style="width:30px;"><input type="number" name="attr_corpsacorps_exp"></td>
+                    <td><button type="roll" class="sheet-roll-btn" title="Corps-à-corps" name="roll_Corpsacorps" value="&{template:COMBAT}{{name=Corps-à-corps}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Dérobée,@{derobee_value}|FORCE,@{force_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button></td>
+                </tr>
+                <tr>
+                    <td style="width:225px;text-align:left;">Dague</td>
+                    <td style="width:30px;"><input type="number" name="attr_dague_niv" value="-6"></td>
+                    <td style="width:55px;"><input type="number" name="attr_dague_init"></td>
+                    <td style="width:57px;"><input type="number" name="attr_dague_dom"></td>
+                    <td style="width:30px;"><input type="number" name="attr_dague_exp"></td>
+                    <td><button type="roll" class="sheet-roll-btn" title="Dague" name="roll_Dague" value="&{template:COMBAT}{{name=Dague}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{dague_niv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button></td>
+                </tr>
+                </table>
 
                 <fieldset class="repeating_weapons">
                 <table>
@@ -722,13 +745,13 @@
                 </table>
 
                 </fieldset>
-
         </div><!-- fin armes -->
+        </div><!-- fin colonne droite -->
 
         </div><!-- fin partie haute -->
 
 
-        <div style="width:1000px; float:left"><!-- partie basse - compétences -->
+        <div style="width:1000px; float:left; margin-top:15px;"><!-- partie basse - compétences -->
         <table>
         <tr>
         <td COLSPAN="17" class="title-separate">Compétences</td>
