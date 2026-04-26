@@ -331,3 +331,46 @@ input.sheet-pc-tab:checked::before {
 .sheet-success { text-align: center; font-style: oblique; font-weight: bolder; color: #3FB315; }
 .sheet-failure { text-align: center; font-style: oblique; font-weight: bolder; color: #B31515; }
 .sheet-caps { text-transform: uppercase; }
+
+/* ===== PC TAB 1 — TWO-COLUMN LAYOUT ===== */
+.sheet-pc1-top {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    gap: 0 15px;
+    align-items: start;
+}
+.sheet-pc1-left { width: 450px; }
+.sheet-pc1-right { padding: 15px; }
+
+/* ===== PC TAB 1 — PERSONAL INFO ===== */
+.sheet-info-grid { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+.sheet-info-row { display: flex; align-items: center; gap: 5px; }
+.sheet-info-label { text-align: right; white-space: nowrap; }
+
+/* ===== PC TAB 1 — CHARACTERISTICS ===== */
+.sheet-char-grid {
+    display: grid;
+    grid-template-columns: 22px 120px 50px 50px 120px 50px 50px 22px;
+    align-items: center;
+    gap: 1px 3px;
+}
+
+/* ===== PC TAB 1 — VITAL STATS ===== */
+.sheet-vitals { display: flex; flex-direction: column; gap: 3px; }
+.sheet-vitals-row { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.sheet-etat-general { background-color: lightgrey; font-weight: bold; padding: 2px 4px; }
+
+/* ===== PC TAB 1 — WEAPON ROWS ===== */
+.sheet-weapon-header,
+.sheet-weapon-row { display: flex; align-items: center; gap: 2px; }
+
+/* ===== PC TAB 1 — SKILLS GRID ===== */
+.sheet-skills-table {
+    display: grid;
+    grid-template-columns: repeat(4, 148px 40px 40px 22px) auto;
+    align-items: center;
+    column-gap: 0;
+    row-gap: 1px;
+    width: 1000px;
+}
+.sheet-skills-row { display: contents; }
