@@ -1,6 +1,7 @@
 {
 	"html": "RDD.html",
 	"css": "RDD.css",
+	"legacy": true,
  	"authors": "Phoxounet",
  	"roll20userid": "781167",
  	"preview": "RDD.png",
