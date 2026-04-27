@@ -513,3 +513,32 @@ input.sheet-pc-tab:checked::before {
     width: 60px;
 }
 
+
+/* ===== PC TAB 3 ===== */
+.sheet-tab3-2col {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.sheet-tab3-col {
+    width: 260px;
+}
+.sheet-arche-section {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.85em;
+    margin-top: 15px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #aaa;
+}
+.sheet-arche-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 1px;
+}
+.sheet-arche-row span { flex: 1; }
+.sheet-arche-row input[type="text"] { flex: 1; min-width: 0; }
+.sheet-arche-row input[type="number"] { width: 44px; }
