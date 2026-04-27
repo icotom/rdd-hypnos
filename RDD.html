@@ -546,14 +546,12 @@
 
     <div class="sheet-pc-tab-content sheet-pc-tab1"><!-- Onglet 1 -->
 
+    <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
     <div class="sheet-pc1-top"><!-- partie haute - caractéristiques & combat -->
 
         <div class="sheet-pc1-left"><!-- colonne gauche -->
             <div><!-- infos générales -->
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_sub.png); width:578px; height:142px;margin-top:5px;">
             <input type="text" name="attr_character_name" class="name" disabled />
-            </div>
             <div class="sheet-info-grid">
                 <div class="sheet-info-row">
                     <span class="sheet-info-label">Heure de Naissance</span>
@@ -587,81 +585,62 @@
 
             <div style="margin-top:15px;"><!-- Caractéristiques (+colonne xp)-->
             <div class="sheet-char-grid">
-                <div></div>
-                <div class="sheet-center">Attribut</div><div style="padding-left:5px">Valeur</div><div style="padding-left:15px">Xp</div>
-                <div class="sheet-center">Attribut</div><div style="padding-left:5px">Valeur</div><div style="padding-left:15px">Xp</div>
-                <div></div>
-                <div></div>
+                <div class="sheet-center">Attribut</div><div style="padding-left:5px">Valeur</div><div style="padding-left:5px">Xp</div>
+                <div class="sheet-center">Attribut</div><div style="padding-left:5px">Valeur</div><div style="padding-left:5px">Xp</div>
                 <div>TAILLE</div>
-                <div style="grid-column:span 2"><input type="number" name="attr_Taille" value="0" class="sheet-center"></div>
-                <div>VOLONTÉ</div>
+                <div><input type="number" name="attr_Taille" value="0" class="sheet-center"></div>
+                <div></div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Volonté" name="roll_Volonté" value="&{template:RDD}{{name=Volonté}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{volonte_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))*0.1)+1]]}}">VOLONTÉ</button></div>
                 <div><input type="number" name="attr_volonte_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_volonte_xp" value="0" class="sheet-center"></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Volonté" name="roll_Volonté" value="&{template:RDD}{{name=Volonté}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{volonte_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))*0.1)+1]]}}"></button></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Apparence" name="roll_apparence" value="&{template:RDD}{{name=Apparence}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{apparence_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))*0.1)+1]]}}"></button></div>
-                <div>APPARENCE</div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Apparence" name="roll_apparence" value="&{template:RDD}{{name=Apparence}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{apparence_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))*0.1)+1]]}}">APPARENCE</button></div>
                 <div><input type="number" name="attr_apparence_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_apparence_xp" value="0" class="sheet-center"></div>
-                <div>INTELLECT</div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Intellect" name="roll_Intellect" value="&{template:RDD}{{name=Intellect}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{intellect_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))*0.1)+1]]}}">INTELLECT</button></div>
                 <div><input type="number" name="attr_Intellect_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_Intellect_xp" value="0" class="sheet-center"></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Intellect" name="roll_Intellect" value="&{template:RDD}{{name=Intellect}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{intellect_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))*0.1)+1]]}}"></button></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Constitution" name="roll_constitution" value="&{template:RDD}{{name=Constitution}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{constitution_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))*0.1)+1]]}}"></button></div>
-                <div>CONSTITUTION</div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Constitution" name="roll_constitution" value="&{template:RDD}{{name=Constitution}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{constitution_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))*0.1)+1]]}}">CONSTITUTION</button></div>
                 <div><input type="number" name="attr_constitution_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_constitution_xp" value="0" class="sheet-center"></div>
-                <div>EMPATHIE</div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Empathie" name="roll_empathie" value="&{template:RDD}{{name=Empathie}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{empathie_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))*0.1)+1]]}}">EMPATHIE</button></div>
                 <div><input type="number" name="attr_empathie_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_empathie_xp" value="0" class="sheet-center"></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Empathie" name="roll_empathie" value="&{template:RDD}{{name=Empathie}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{empathie_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))*0.1)+1]]}}"></button></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Force" name="roll_Force" value="&{template:RDD}{{name=Force}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{force_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))*0.1)+1]]}}"></button></div>
-                <div>FORCE</div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Force" name="roll_Force" value="&{template:RDD}{{name=Force}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{force_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))*0.1)+1]]}}">FORCE</button></div>
                 <div><input type="number" name="attr_force_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_force_xp" value="0" class="sheet-center"></div>
                 <div>RÊVE</div>
                 <div><input type="number" name="attr_reve_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_reve_xp" value="0" class="sheet-center"></div>
-                <div style="display:none"><button  type="roll" class="sheet-roll-btn" title="Rêve" name="roll_Rêve" value="&{template:RDD}{{name=Rêve}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{reve_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))*0.1)+1]]}}"></button></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Agilité" name="roll_agilite" value="&{template:RDD}{{name=Agilité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{agilite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))*0.1)+1]]}}"></button></div>
-                <div>AGILITÉ</div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Agilité" name="roll_agilite" value="&{template:RDD}{{name=Agilité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{agilite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))*0.1)+1]]}}">AGILITÉ</button></div>
                 <div><input type="number" name="attr_agilite_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_agilite_xp" value="0" class="sheet-center"></div>
                 <div>CHANCE</div>
                 <div><input type="number" name="attr_chance_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_chance_xp" value="0" class="sheet-center"></div>
-                <div></div>
-                <div><button  type="roll" class="sheet-roll-btn" title="Dexterité" name="roll_dexterite" value="&{template:RDD}{{name=Dexterité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{dexterite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))*0.1)+1]]}}"></button></div>
-                <div>DEXTERITÉ</div>
+                <div><button  type="roll" class="sheet-roll-btn" title="Dexterité" name="roll_dexterite" value="&{template:RDD}{{name=Dexterité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{dexterite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))*0.1)+1]]}}">DEXTERITÉ</button></div>
                 <div><input type="number" name="attr_dexterite_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_dexterite_xp" value="0" class="sheet-center"></div>
                 <div>Mêlée</div>
                 <div><input type="number" name="attr_melee_value" value="0" class="sheet-center"></div>
-                <div style="display:none"><input type="number" name="attr_melee_xp" value="0" class="sheet-center"></div>
-                <div></div>
-                <div></div>
+                <div style="visibility:hidden"><input type="number" name="attr_melee_xp" value="0" class="sheet-center"></div>
                 <div>VUE</div>
                 <div><input type="number" name="attr_vue_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_vue_xp" value="0" class="sheet-center"></div>
                 <div>Tir</div>
                 <div><input type="number" name="attr_tir_value" value="0" class="sheet-center"></div>
-                <div style="display:none"><input type="number" name="attr_tir_xp" value="0" class="sheet-center"></div>
-                <div></div>
-                <div></div>
+                <div style="visibility:hidden"><input type="number" name="attr_tir_xp" value="0" class="sheet-center"></div>
                 <div>OUÏE</div>
                 <div><input type="number" name="attr_ouie_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_ouie_xp" value="0" class="sheet-center"></div>
                 <div>Lancer</div>
                 <div><input type="number" name="attr_lancer_value" value="0" class="sheet-center"></div>
-                <div style="display:none"><input type="number" name="attr_lancer_xp" value="0" class="sheet-center"></div>
-                <div></div>
-                <div></div>
+                <div style="visibility:hidden"><input type="number" name="attr_lancer_xp" value="0" class="sheet-center"></div>
                 <div>ODORAT-GOÛT</div>
                 <div><input type="number" name="attr_odoratgout_value" value="0" class="sheet-center"></div>
                 <div><input type="number" name="attr_odoratgout_xp" value="0" class="sheet-center"></div>
                 <div>Dérobée</div>
                 <div><input type="number" name="attr_derobee_value" value="0" class="sheet-center"></div>
-                <div style="display:none"><input type="number" name="attr_derobee_xp" value="0" class="sheet-center"></div>
-                <div></div>
+                <div style="visibility:hidden"><input type="number" name="attr_derobee_xp" value="0" class="sheet-center"></div>
             </div>
             </div><!-- fin caractéristiques -->
 
@@ -690,45 +669,45 @@
         <div style="width:520px;margin-top:15px;"><!-- Armes -->
                     <div class="title-separate">Armement</div>
                     <div class="sheet-weapon-header">
-                        <span style="width:225px;">C. de Combat</span>
-                        <span style="width:30px;">Niv</span>
-                        <span style="width:55px;text-align:center">Init</span>
-                        <span style="width:57px;">Dom</span>
-                        <span style="width:30px;">Exp</span>
+                        <span style="width:225px;">Compétences de Combat</span>
+                        <span style="width:45px;">Niv</span>
+                        <span style="width:45px;text-align:center">Init</span>
+                        <span style="width:45px;">Dom</span>
+                        <span style="width:45px;">Exp</span>
                     </div>
 
                 <div class="sheet-weapon-row">
                     <span style="width:225px;">Esquive</span>
-                    <input type="number" name="attr_esquive_niv" value="-6" style="width:30px;">
-                    <input type="number" name="attr_esquive_init" style="width:55px;">
-                    <input type="number" name="attr_esquive_dom" style="width:57px;">
-                    <input type="number" name="attr_esquive_exp" style="width:30px;">
+                    <input type="number" name="attr_esquive_niv" value="-6" style="width:45px;">
+                    <input type="number" name="attr_esquive_init" style="width:45px;">
+                    <input type="number" name="attr_esquive_dom" style="width:45px;">
+                    <input type="number" name="attr_esquive_exp" style="width:45px;">
                     <button type="roll" class="sheet-roll-btn" title="Esquive" name="roll_Esquive" value="&{template:COMBAT}{{name=Esquive}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{esquive_niv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Dérobée,@{derobee_value}|Mêlée,@{melee_value}|AGILITÉ,@{agilite_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button>
                 </div>
                 <div class="sheet-weapon-row">
                     <span style="width:225px;">Corps-à-corps</span>
-                    <input type="number" name="attr_corpsacorps_niv" value="-6" style="width:30px;">
-                    <input type="number" name="attr_corpsacorps_init" style="width:55px;">
-                    <input type="number" name="attr_corpsacorps_dom" style="width:57px;">
-                    <input type="number" name="attr_corpsacorps_exp" style="width:30px;">
+                    <input type="number" name="attr_corpsacorps_niv" value="-6" style="width:45px;">
+                    <input type="number" name="attr_corpsacorps_init" style="width:45px;">
+                    <input type="number" name="attr_corpsacorps_dom" style="width:45px;">
+                    <input type="number" name="attr_corpsacorps_exp" style="width:45px;">
                     <button type="roll" class="sheet-roll-btn" title="Corps-à-corps" name="roll_Corpsacorps" value="&{template:COMBAT}{{name=Corps-à-corps}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Dérobée,@{derobee_value}|FORCE,@{force_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{corpsacorps_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button>
                 </div>
                 <div class="sheet-weapon-row">
                     <span style="width:225px;">Dague</span>
-                    <input type="number" name="attr_dague_niv" value="-6" style="width:30px;">
-                    <input type="number" name="attr_dague_init" style="width:55px;">
-                    <input type="number" name="attr_dague_dom" style="width:57px;">
-                    <input type="number" name="attr_dague_exp" style="width:30px;">
+                    <input type="number" name="attr_dague_niv" value="-6" style="width:45px;">
+                    <input type="number" name="attr_dague_init" style="width:45px;">
+                    <input type="number" name="attr_dague_dom" style="width:45px;">
+                    <input type="number" name="attr_dague_exp" style="width:45px;">
                     <button type="roll" class="sheet-roll-btn" title="Dague" name="roll_Dague" value="&{template:COMBAT}{{name=Dague}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{dague_niv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{dague_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button>
                 </div>
 
                 <fieldset class="repeating_weapons">
                 <div class="sheet-weapon-row">
                     <input type="text" name="attr_CombatCap" style="width:215px;">
-                    <input type="number" name="attr_CombatNiv" style="width:30px;">
-                    <input type="number" name="attr_CombatInit" style="width:55px;">
-                    <input type="number" name="attr_CombatDom" style="width:57px;">
-                    <input type="number" name="attr_CombatExp" style="width:30px;">
+                    <input type="number" name="attr_CombatNiv" style="width:45px;">
+                    <input type="number" name="attr_CombatInit" style="width:45px;">
+                    <input type="number" name="attr_CombatDom" style="width:45px;">
+                    <input type="number" name="attr_CombatExp" style="width:45px;">
                     <button  type="roll" class="sheet-roll-btn" title="Combat à distance" name="roll_Distance" value="&{template:COMBAT}{{name=@{CombatCap}}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{CombatNiv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button>
                 </div>
                 </fieldset>
