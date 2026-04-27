@@ -542,3 +542,36 @@ input.sheet-pc-tab:checked::before {
 .sheet-arche-row span { flex: 1; }
 .sheet-arche-row input[type="text"] { flex: 1; min-width: 0; }
 .sheet-arche-row input[type="number"] { width: 44px; }
+
+/* ===== PC TAB 4 ===== */
+.sheet-tab4-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.sheet-tab4-col { flex: 1; }
+.sheet-bag-header {
+    display: flex;
+    gap: 4px;
+    margin-top: 14px;
+    margin-bottom: 2px;
+}
+.sheet-bag-name {
+    flex: 1;
+    text-align: center;
+    color: white;
+    background: #BDBDBD;
+}
+.sheet-bag-weight {
+    width: 50px;
+    text-align: center;
+    color: white;
+    background: #BDBDBD;
+}
+.sheet-bag-row {
+    display: flex;
+    gap: 4px;
+}
+.sheet-bag-row input[type="text"] { flex: 1; }
+.sheet-bag-item-weight { flex: 0 0 50px !important; width: 50px !important; max-width: 50px; }
