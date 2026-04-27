@@ -10,7 +10,7 @@
     <div class="sheet-info-grid">
         <div class="sheet-info-row">
             <span class="sheet-info-label">Heure de Naissance</span>
-            <select name="attr_birth">
+            <select name="attr_birth" style="width:150px;">
                 <option value="Le Vaisseau">Le Vaisseau</option>
                 <option value="La Sirène">La Sirène</option>
                 <option value="Le Faucon">Le Faucon</option>
@@ -304,6 +304,7 @@
     </div>    
         
     <div class="sheet-pc">
+    <input type="checkbox" name="attr_haut_reve" class="sheet-haut-reve-ctrl" value="1">
     <input type="radio" name="attr_tab" class="sheet-pc-tab sheet-pc-tab1" value="1" title="Principale" checked="checked" />
     <input type="radio" name="attr_tab" class="sheet-pc-tab sheet-pc-tab2" value="2" title="Etat Global" />
     <input type="radio" name="attr_tab" class="sheet-pc-tab sheet-pc-tab3" value="3" title="Archétype" />
@@ -322,7 +323,7 @@
             <div class="sheet-info-grid">
                 <div class="sheet-info-row">
                     <span class="sheet-info-label">Heure de Naissance</span>
-                    <select name="attr_birth">
+                    <select name="attr_birth" style="width:150px;">
                         <option value="Le Vaisseau">Le Vaisseau</option>
                         <option value="La Sirène">La Sirène</option>
                         <option value="Le Faucon">Le Faucon</option>
@@ -336,6 +337,11 @@
                         <option value="Le Roseau">Le Roseau</option>
                         <option value="Le Château Dormant">Le Château Dormant</option>
                     </select>
+                    <label class="sheet-haut-reve-btn">
+                        <input type="checkbox" name="attr_haut_reve" class="sheet-haut-reve-visual" value="1">
+                        <span class="sheet-haut-reve-off">Vrai Rêvant</span>
+                        <span class="sheet-haut-reve-on">Haut-Rêvant</span>
+                    </label>
                 </div>
                 <div class="sheet-info-row">
                     <span class="sheet-info-label">Sexe</span>

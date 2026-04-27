@@ -623,3 +623,22 @@ input.sheet-pc-tab:checked::before {
     align-items: center;
     margin-bottom: 2px;
 }
+
+/* ===== HAUT-RÊVE TOGGLE ===== */
+.sheet-haut-reve-ctrl,
+.sheet-haut-reve-visual { display: none; }
+.sheet-haut-reve-btn {
+    margin-left: 30px;
+    cursor: pointer;
+    padding: 2px 8px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    background: #f0f0f0;
+    user-select: none;
+    display: inline-block;
+}
+.sheet-haut-reve-on { display: none; }
+.sheet-haut-reve-visual:checked ~ .sheet-haut-reve-off { display: none; }
+.sheet-haut-reve-visual:checked ~ .sheet-haut-reve-on { display: inline; }
+.sheet-haut-reve-ctrl:not(:checked) ~ input.sheet-pc-tab5,
+.sheet-haut-reve-ctrl:not(:checked) ~ div.sheet-pc-tab5 { display: none !important; }
