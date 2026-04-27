@@ -1357,38 +1357,31 @@
 </div> <!-- fin Onglet 4 -->
 
     <div class="sheet-pc-tab-content sheet-pc-tab5"><!-- Onglet 5 -->
-
-            <div><!-- infos générales -->
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_sub.png); width:578px; height:142px;margin-top:5px;">
-            <input type="text" name="attr_character_name" class="name" disabled />
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/bg_magic_header.jpg); width:596px; height:102px;margin-top:-75px;margin-left:600px;"></div>
+        <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
+        <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/bg_magic_header.jpg); width:596px; height:102px;margin-top:5px;"></div>
+        <div class="sheet-spell-header">
+            <span style="width:120px;">Voie</span>
+            <span style="width:350px;">Titre</span>
+            <span style="width:150px;">T.M.R.</span>
+            <span style="width:100px;">Difficulté</span>
+            <span style="width:100px;">Coût en Rêve</span>
+            <span style="width:350px;">Bonus de case</span>
+        </div>
+        <fieldset class="repeating_spell">
+            <div class="sheet-spell-row">
+                <select name="attr_spellvoie" style="width:120px;text-align:center;">
+                    <option value="Oniros">Oniros</option>
+                    <option value="Hypnos">Hypnos</option>
+                    <option value="Narcos">Narcos</option>
+                    <option value="Thanatos">Thanatos</option>
+                </select>
+                <input type="text" name="attr_spelltitre" style="width:350px;text-align:center;">
+                <input type="text" name="attr_spellttmr" style="width:150px;text-align:center;">
+                <input type="text" name="attr_spelltr1" style="width:100px;text-align:center;">
+                <input type="text" name="attr_spelltr2" style="width:100px;text-align:center;">
+                <input type="text" name="attr_spelltbonuscase" style="width:350px;text-align:center;">
             </div>
-            </div>
-            <table table-layout="fixed" width="1170px">
-            <tr>
-                <td style="text-align:center;width:120px">Voie</td>
-                <td style="text-align:center;width:350px;">Titre</td>
-                <td style="text-align:center;width:150px;">T.M.R.</td>
-                <td style="text-align:center;width:100px;">Difficulté</td>
-                <td style="text-align:center;width:100px;">Coût en Rêve</td>
-                <td style="text-align:center;width:350px;">Bonus de case</td>
-            </tr>
-
-            </table>
-                <fieldset class="repeating_spell">
-                <table>
-                <tr>
-                    <td style="width:120px;"><input type="text" name="attr_spellvoie" style="width:120px;text-align:center;"></td>
-                    <td style="width:350px;"><input type="text" name="attr_spelltitre" style="width:350px;text-align:center;"></td>
-                    <td style="width:150px;"><input type="text" name="attr_spellttmr" style="width:150px;text-align:center;"></td>
-                    <td style="width:100px;"><input type="text" name="attr_spelltr1" style="width:100px;text-align:center;"></td>
-                    <td style="width:100px;"><input type="text" name="attr_spelltr2" style="width:100px;text-align:center;"></td>
-                    <td style="width:350px;"><input type="text" name="attr_spelltbonuscase" style="width:350px;text-align:center;"></td>
-                </tr>
-                </table>
-                </fieldset>
-
+        </fieldset>
     </div> <!-- fin Onglet 5 -->
 
     </div>

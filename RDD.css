@@ -575,3 +575,19 @@ input.sheet-pc-tab:checked::before {
 }
 .sheet-bag-row input[type="text"] { flex: 1; }
 .sheet-bag-item-weight { flex: 0 0 50px !important; width: 50px !important; max-width: 50px; }
+
+/* ===== PC TAB 5 ===== */
+.sheet-spell-header {
+    display: flex;
+    gap: 4px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-style: oblique;
+    text-align: center;
+}
+.sheet-spell-header span { text-align: center; flex-shrink: 0; }
+.sheet-spell-row {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 2px;
+}
