@@ -6,266 +6,175 @@
     <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab2" value="8" title="Entité" />
     
     <div class="sheet-npc-tab-content sheet-npc-tab1"><!-- Onglet NPC -->
-
-    <div><!--NPC draft -->
-
-        <div style="width:500px;"><!-- colonne gauche -->
-            <div><!-- infos générales -->
-            
-            <div style="padding:5px;">
-            <input type="text" name="attr_character_name" class="npcname" disabled />
-            </div>
-            <table class="sheet-center">
-            <tr>
-            <td COLSPAN="3" style="text-align:right">Heure de Naissance</td><td COLSPAN="3"><input type="text" name="attr_birth" class="sheet-center"></td>
-            </tr>
-            <tr>
-            <td COLSPAN="1" style="text-align:right">Race</td><td><input type="text" name="attr_race" style="width:80px;text-align:center"></td>
-            <td COLSPAN="1" style="text-align:right">Sexe</td><td><input type="text" name="attr_sexe" style="width:80px;text-align:center"></td>
-            <td style="text-align:right">Âge</td><td><input type="number" name="attr_age" ></td>
-            </tr>
-            <tr>
-            <td COLSPAN="1" style="text-align:right">Taille</td><td><input type="text" name="attr_taillerp" style="width:80px;text-align:center"></td>
-            <td COLSPAN="1" style="text-align:right">Poids</td><td><input type="text" name="attr_poids" style="width:80px;text-align:center"></td>
-            </tr>
-            <tr>
-            <td style="text-align:right">Cheveux</td><td COLSPAN="1"><input type="text" name="attr_cheveux" style="width:80px;text-align:center"></td>
-            <td style="text-align:right">Yeux</td><td COLSPAN="1"><input type="text" name="attr_yeux" style="width:80px;text-align:center"></td>
-            <td style="text-align:right">Beauté</td><td><input type="number" name="attr_beaute" class="sheet-center"></td>
-            </tr>
-            </table>
-            <div style="margin-top:10px;">Signes Particuliers</div>
-            <textarea style="width:450px;height:40px" name="attr_signes_part"></textarea>
-
-            </div><!-- fin infos générales -->
+    <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
+    <input type="text" name="attr_character_name" class="npcname" disabled />
+    <div class="sheet-info-grid">
+        <div class="sheet-info-row">
+            <span class="sheet-info-label">Heure de Naissance</span>
+            <input type="text" name="attr_birth" class="sheet-center">
         </div>
-            
-            <div style="margin-top:15px;">
-                <table><tr>
-                    <td>
-            <!-- Caractéristiques (+colonne xp)-->
-                    
-                
-                
-                <table>
-            <tr>
-            <td></td>
-            <td class="sheet-center">Attribut</td><td style="padding-left:5px">Valeur</td>
-            <td class="sheet-center">Attribut</td><td style="padding-left:5px">Valeur</td>
-            </tr>
-            <tr>
-            <td></td>
-            <td>TAILLE</td>
-            <td COLSPAN="1"><input type="number" name="attr_Taille" value="0" class="sheet-center"></td>
-            <td>VOLONTÉ</td>
-            <td><input type="number" name="attr_volonte_value" value="0" class="sheet-center"></td>
-                <td><button  type="roll" class="sheet-roll-btn" title="Volonté" name="roll_Volonté" value="&{template:NPC-Skill}{{name=Volonté}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{volonte_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))*0.1)+1]]}}"></button></td>
-            </tr>
-            <tr>
-                <td><button  type="roll" class="sheet-roll-btn" title="Apparence" name="roll_apparence" value="&{template:NPC-Skill}{{name=Apparence}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{apparence_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))*0.1)+1]]}}"></button></td>
-            <td>APPARENCE</td>
-            <td><input type="number" name="attr_apparence_value" value="0" class="sheet-center"></td>
-            <td>INTELLECT</td>
-            <td><input type="number" name="attr_Intellect_value" value="0" class="sheet-center"></td>
-            <td><button  type="roll" class="sheet-roll-btn" title="Intellect" name="roll_Intellect" value="&{template:NPC-Skill}{{name=Intellect}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{intellect_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))*0.1)+1]]}}"></button></td>
-            </tr>
-            <tr>
-                <td><button  type="roll" class="sheet-roll-btn" title="Constitution" name="roll_constitution" value="&{template:NPC-Skill}{{name=Constitution}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{constitution_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))*0.1)+1]]}}"></button></td>
-            <td>CONSTITUTION</td>
-            <td><input type="number" name="attr_constitution_value" value="0" class="sheet-center"></td>
-            <td>EMPATHIE</td>
-            <td><input type="number" name="attr_empathie_value" value="0" class="sheet-center"></td>
-                <td><button  type="roll" class="sheet-roll-btn" title="Empathie" name="roll_empathie" value="&{template:NPC-Skill}{{name=Empathie}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{empathie_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))*0.1)+1]]}}"></button></td>
-            </tr>
-            <tr>
-                <td><button  type="roll" class="sheet-roll-btn" title="Force" name="roll_Force" value="&{template:NPC-Skill}{{name=Force}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{force_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))*0.1)+1]]}}"></button></td>
-            <td>FORCE</td>
-            <td><input type="number" name="attr_force_value" value="0" class="sheet-center"></td>
-            <td>RÊVE</td>
-            <td><input type="number" name="attr_reve_value" value="0" class="sheet-center"></td>
-                <td style="display:block"><button  type="roll" class="sheet-roll-btn" title="Rêve" name="roll_Rêve" value="&{template:NPC-Skill}{{name=Rêve}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{reve_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_value}*5)))*0.1)+1]]}}"></button></td>
-
-            </tr>
-            <tr>
-                <td><button  type="roll" class="sheet-roll-btn" title="Agilité" name="roll_agilite" value="&{template:NPC-Skill}{{name=Agilité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{agilite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))*0.1)+1]]}}"></button></td>
-            <td>AGILITÉ</td>
-            <td><input type="number" name="attr_agilite_value" value="0" class="sheet-center"></td>
-            <td>CHANCE</td>
-            <td><input type="number" name="attr_chance_value" value="0" class="sheet-center"></td>
-            </tr>
-            <tr>
-                <td><button  type="roll" class="sheet-roll-btn" title="Dexterité" name="roll_dexterite" value="&{template:NPC-Skill}{{name=Dexterité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{dexterite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))*0.1)+1]]}}"></button></td>
-            <td>DEXTERITÉ</td>
-            <td><input type="number" name="attr_dexterite_value" value="0" class="sheet-center"></td>
-            <td>Mêlée</td>
-            <td><input type="number" name="attr_melee_value" value="0" class="sheet-center"></td>
-            </tr>
-            <tr>
-            <td></td>
-            <td>VUE</td>
-            <td><input type="number" name="attr_vue_value" value="0" class="sheet-center"></td>
-            <td>Tir</td>
-            <td><input type="number" name="attr_tir_value" value="0" class="sheet-center"></td>
-            </tr>
-            <tr>
-            <td></td>
-            <td>OUÏE</td>
-            <td><input type="number" name="attr_ouie_value" value="0" class="sheet-center"></td>
-            <td>Lancer</td>
-            <td><input type="number" name="attr_lancer_value" value="0" class="sheet-center"></td>
-            </tr>
-            <tr>
-            <td></td>
-            <td>ODORAT-GOÛT</td>
-            <td><input type="number" name="attr_odoratgout_value" value="0" class="sheet-center"></td>
-            <td>Dérobée</td>
-            <td><input type="number" name="attr_derobee_value"value="0" class="sheet-center"></td>
-            </tr>
-            </table>
-            
-                        </td>
-
-                        
-                        <!-- fin caractéristiques -->
-
-                            <td>
-
-        <div style="width:450px">
-        <table>
-        <tr>
-        <td class="sheet-center">Vie</td><td><input class="bulle" type="number" name="attr_vie"></td>
-        <td class="sheet-center">Endurance</td><td><input class="bulle"  type="number" name="attr_endurance"></td>
-        <td class="sheet-center">Seuil de Constitution</td><td><input class="bulle"  type="number" name="attr_const"></td>
-        </tr>
-        <tr>
-        <td class="sheet-center">+Dom</td><td><input class="bulle"  type="number" name="attr_dom"></td>
-        <td style="text-align:center;padding:0px 5px;">Malus Armure</td><td><input class="bulle"  type="number" name="attr_malus_armure"></td>
-            <td style="text-align:center;padding:0px 5px;">Protection</td><td><input class="bulle"  type="number" name="attr_prot"></td>
-        </tr>
-        <tr>
-        <td colspan="3" style="text-align:center; background-color: lightgrey;font-weight: bold;">Etat Général</td><td style="text-align:center;background-color: lightgrey;"></td><td style="padding:;text-align:center;background-color: lightgrey;"><input class="bulle"  type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled"></td>
-        </tr>
-        </table>
-            
-            <table>
-            <tr>
-            <td style="display:hidden"></td><td style="text-align:center;font-style:oblique;padding-left:20px;">Actuel</td><td style="text-align:center;font-style:oblique;">Max</td>
-            </tr>
-            <tr>
-            <td>Points d'Endurance</td><td  style="padding-left:20px"><input type="number" name="attr_PE_total" class="bulle"></td><td><input type="number" name="attr_PE_total_max" class="bulle"></td>
-            </tr>
-            <tr>
-            <td>Points de Vie</td><td  style="padding-left:20px"><input type="number" name="attr_PV_total" class="bulle" value="0"></td><td><input type="number" name="attr_PV_total_max" class="bulle" value="0"></td>
-            </tr>
-            <tr>
-            <td>Points de Rêve</td><td  style="padding-left:20px"><input type="number" name="attr_reve_total" class="bulle" value="0"></td><td><input type="number" name="attr_reve_total_max" class="bulle" value="0"></td>
-                <td>
-                    <button  type="roll" class="sheet-roll-btn" title="Rêve Actuel" name="roll_Rêve" value="&{template:NPC-Skill}{{name=Rêve}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{reve_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))*0.1)+1]]}}"></button>
-                </td>
-            </tr>
-            <tr>
-            <td>Points de Chance</td><td  style="padding-left:20px"><input type="number" name="attr_chance_total"  class="bulle" value="0"></td><td><input type="number" name="attr_chance_max_total" class="bulle" value="0"></td>
-            <td><button  type="roll" class="sheet-roll-btn" title="Chance" name="roll_Chance" value="&{template:NPC-Skill}{{name=Chance}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{chance_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))*0.1)+1]]}}"></button></td>
-            </tr>
-            </table>            
+        <div class="sheet-info-row">
+            <span class="sheet-info-label">Race</span>
+            <input type="text" name="attr_race" style="width:80px;text-align:center">
+            <span class="sheet-info-label">Sexe</span>
+            <input type="text" name="attr_sexe" style="width:80px;text-align:center">
+            <span class="sheet-info-label">Âge</span>
+            <input type="number" name="attr_age" style="width:80px;text-align:center">
         </div>
-                            </td>
-
-        </tr></table>
-        </div> <!-- end of etat global summary -->
-        
-        
-        <table>
-            <tr><!-- Armes -->
-                <td valign="top">
-            <div style="width:450px;padding:10px;align:top">
-                
-                <div class="title-separate">Armement</div>
-                    <table class="sheet-center">
-                    <tr>
-                    <td style="width:225px;">C. de Combat</td>
-                    <td style="width:30px;text-align:left">Niv</td>
-                    <td style="width:55px;text-align:center">Init</td>
-                    <td style="width:57px;text-align:left">Dom</td>
-                    <td style="width:30px;text-align:left">Exp</td>
-                    </tr>
-                    </table>
-
-                <fieldset class="repeating_weapons">
-                <table>
-                <tr>
-                    <td><input type="text" name="attr_CombatCap"></td>
-                    <td><input type="number" name="attr_CombatNiv"></td>
-                    <td><input type="number" name="attr_CombatInit"></td>
-                    <td><input type="number" name="attr_CombatDom"></td>
-                    <td><input type="number" name="attr_CombatExp"></td>
-                    <td><button  type="roll" class="sheet-roll-btn" title="Combat à distance" name="roll_Distance" value="&{template:NPC-Skill}{{name=@{CombatCap}}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{CombatNiv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button></td>
-                    </tr>
-                </table>
-
-                </fieldset>
-                    
-            </div></td>
-        <!-- fin armes -->
-            
-                <td valign="top">
-        <div style="width:260px;padding:10px;align:top"><!-- NPC Skills -->
-                    <div class="title-separate">Competences</div>
-                    <table class="sheet-center">
-                    <tr>
-                    <td style="width:225px;">Competences</td>
-                    <td style="width:30px;text-align:left">Niv</td>
-                    </tr>
-                    </table>
-
-                <fieldset class="repeating_skills">
-                <table>
-                <tr>
-                    <td><input type="text" name="attr_SkillName"></td>
-                    <td><input type="number" name="attr_SkillNiv"></td>
-                    <td><button  type="roll" class="sheet-roll-btn" title="Competence NPC" name="roll_Skill" value="&{template:NPC-Skill}{{name=@{SkillName}}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{SkillNiv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|AGILITÉ,@{agilite_value}|APPARENCE,@{apparence_value}|CHANCE,@{chance_value}|CONSTITUTION,@{constitution_value}|DEXTERITÉ,@{dexterite_value}|EMPATHIE,@{empathie_value}|FORCE,@{force_value}|INTELLECT,@{intellect_value}|ODORAT-GOÛT,@{odoratgout_value}|OUÏE,@{ouie_value}|VOLONTÉ,@{volonte_value}|VUE,@{vue_value}|RÊVE,@{reve_value}|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button></td>
-                    </tr>
-                </table>
-
-                </fieldset>
-
-        </div></td>
-        
-        </tr>
-                </table>
-        <!-- fin npc skills -->
-        
-        
-        <div style="width:450px;margin-left:5px"><!-- Haut-reve -->
-                    <div class="title-separate">Haut-Reve</div>
-                <table table-layout="fixed" width="1170px">
-            <tr>
-                <td style="text-align:center;width:120px">Voie</td>
-                <td style="text-align:center;width:350px;">Titre</td>
-                <td style="text-align:center;width:150px;">T.M.R.</td>
-                <td style="text-align:center;width:100px;">Difficulté</td>
-                <td style="text-align:center;width:100px;">Coût en Rêve</td>
-                <td style="text-align:center;width:350px;">Bonus de case</td>
-            </tr>
-                </table>
-
-            <fieldset class="repeating_spell">
-                <table>
-                <tr>
-                    <td style="width:120px;"><input type="text" name="attr_spellvoie" style="width:120px;text-align:center;"></td>
-                    <td style="width:350px;"><input type="text" name="attr_spelltitre" style="width:350px;text-align:center;"></td>
-                    <td style="width:150px;"><input type="text" name="attr_spellttmr" style="width:150px;text-align:center;"></td>
-                    <td style="width:100px;"><input type="text" name="attr_spelltr1" style="width:100px;text-align:center;"></td>
-                    <td style="width:100px;"><input type="text" name="attr_spelltr2" style="width:100px;text-align:center;"></td>
-                    <td style="width:350px;"><input type="text" name="attr_spelltbonuscase" style="width:350px;text-align:center;"></td>
-                </tr>
-                </table>
-            </fieldset>
-        </div><!-- fin Haut-Reve -->       
-
-    </div><!-- fin Onglet NPC -->
-
+        <div class="sheet-info-row">
+            <span class="sheet-info-label">Taille</span>
+            <input type="text" name="attr_taillerp" style="width:80px;text-align:center">
+            <span class="sheet-info-label">Poids</span>
+            <input type="text" name="attr_poids" style="width:80px;text-align:center">
+        </div>
+        <div class="sheet-info-row">
+            <span class="sheet-info-label">Cheveux</span>
+            <input type="text" name="attr_cheveux" style="width:80px;text-align:center">
+            <span class="sheet-info-label">Yeux</span>
+            <input type="text" name="attr_yeux" style="width:80px;text-align:center">
+            <span class="sheet-info-label">Beauté</span>
+            <input type="number" name="attr_beaute" class="sheet-center">
+        </div>
     </div>
+    <div style="margin-top:10px;">Signes Particuliers</div>
+    <textarea style="width:450px;height:40px" name="attr_signes_part"></textarea>
+    <div style="margin-top:15px;">
+    <div class="sheet-npc-char-grid">
+        <div class="sheet-center">Attribut</div><div style="padding-left:5px">Valeur</div>
+        <div class="sheet-center">Attribut</div><div style="padding-left:5px">Valeur</div>
+        <div>TAILLE</div>
+        <div><input type="number" name="attr_Taille" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Volonté" name="roll_Volonté" value="&{template:NPC-Skill}{{name=Volonté}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{volonte_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{volonte_value}*5)))*0.1)+1]]}}">VOLONTÉ</button></div>
+        <div><input type="number" name="attr_volonte_value" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Apparence" name="roll_apparence" value="&{template:NPC-Skill}{{name=Apparence}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{apparence_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{apparence_value}*5)))*0.1)+1]]}}">APPARENCE</button></div>
+        <div><input type="number" name="attr_apparence_value" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Intellect" name="roll_Intellect" value="&{template:NPC-Skill}{{name=Intellect}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{intellect_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{intellect_value}*5)))*0.1)+1]]}}">INTELLECT</button></div>
+        <div><input type="number" name="attr_Intellect_value" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Constitution" name="roll_constitution" value="&{template:NPC-Skill}{{name=Constitution}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{constitution_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{constitution_value}*5)))*0.1)+1]]}}">CONSTITUTION</button></div>
+        <div><input type="number" name="attr_constitution_value" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Empathie" name="roll_empathie" value="&{template:NPC-Skill}{{name=Empathie}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{empathie_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{empathie_value}*5)))*0.1)+1]]}}">EMPATHIE</button></div>
+        <div><input type="number" name="attr_empathie_value" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Force" name="roll_Force" value="&{template:NPC-Skill}{{name=Force}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{force_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{force_value}*5)))*0.1)+1]]}}">FORCE</button></div>
+        <div><input type="number" name="attr_force_value" value="0" class="sheet-center"></div>
+        <div>RÊVE</div>
+        <div><input type="number" name="attr_reve_value" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Agilité" name="roll_agilite" value="&{template:NPC-Skill}{{name=Agilité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{agilite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{agilite_value}*5)))*0.1)+1]]}}">AGILITÉ</button></div>
+        <div><input type="number" name="attr_agilite_value" value="0" class="sheet-center"></div>
+        <div>CHANCE</div>
+        <div><input type="number" name="attr_chance_value" value="0" class="sheet-center"></div>
+        <div><button  type="roll" class="sheet-roll-btn" title="Dexterité" name="roll_dexterite" value="&{template:NPC-Skill}{{name=Dexterité}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{dexterite_value}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{dexterite_value}*5)))*0.1)+1]]}}">DEXTERITÉ</button></div>
+        <div><input type="number" name="attr_dexterite_value" value="0" class="sheet-center"></div>
+        <div>Mêlée</div>
+        <div><input type="number" name="attr_melee_value" value="0" class="sheet-center"></div>
+        <div>VUE</div>
+        <div><input type="number" name="attr_vue_value" value="0" class="sheet-center"></div>
+        <div>Tir</div>
+        <div><input type="number" name="attr_tir_value" value="0" class="sheet-center"></div>
+        <div>OUÏE</div>
+        <div><input type="number" name="attr_ouie_value" value="0" class="sheet-center"></div>
+        <div>Lancer</div>
+        <div><input type="number" name="attr_lancer_value" value="0" class="sheet-center"></div>
+        <div>ODORAT-GOÛT</div>
+        <div><input type="number" name="attr_odoratgout_value" value="0" class="sheet-center"></div>
+        <div>Dérobée</div>
+        <div><input type="number" name="attr_derobee_value" value="0" class="sheet-center"></div>
+    </div><!-- fin sheet-npc-char-grid -->
+    </div><!-- fin caractéristiques -->
+    <div style="margin-top:15px;">
+    <div class="sheet-vitals">
+        <div class="sheet-vitals-row">
+            <span class="sheet-center">Vie</span><input class="bulle" type="number" name="attr_vie">
+            <span class="sheet-center">Endurance</span><input class="bulle" type="number" name="attr_endurance">
+            <span class="sheet-center">Seuil de Constitution</span><input class="bulle" type="number" name="attr_const">
+        </div>
+        <div class="sheet-vitals-row">
+            <span class="sheet-center">+Dom</span><input class="bulle" type="number" name="attr_dom">
+            <span style="text-align:center;padding:0px 5px;">Malus Armure</span><input class="bulle" type="number" name="attr_malus_armure">
+            <span style="text-align:center;padding:0px 5px;">Protection</span><input class="bulle" type="number" name="attr_prot">
+        </div>
+        <div class="sheet-vitals-row sheet-etat-general">
+            <span>Etat Général</span>
+            <input class="bulle" type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled">
+        </div>
+        <div class="sheet-vitals-row">
+            <span style="width:140px;">Points d'Endurance</span>
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="bulle">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="bulle">
+        </div>
+        <div class="sheet-vitals-row">
+            <span style="width:140px;">Points de Vie</span>
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PV_total" class="bulle" value="0">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PV_total_max" class="bulle" value="0">
+        </div>
+        <div class="sheet-vitals-row">
+            <span style="width:140px;">Points de Rêve</span>
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_reve_total" class="bulle" value="0">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_reve_total_max" class="bulle" value="0">
+            <button  type="roll" class="sheet-roll-btn" title="Rêve Actuel" name="roll_Rêve" value="&{template:NPC-Skill}{{name=Rêve}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{reve_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))*0.1)+1]]}}">Rêve</button>
+        </div>
+        <div class="sheet-vitals-row">
+            <span style="width:140px;">Points de Chance</span>
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_chance_total" class="bulle" value="0">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_chance_max_total" class="bulle" value="0">
+            <button  type="roll" class="sheet-roll-btn" title="Chance" name="roll_Chance" value="&{template:NPC-Skill}{{name=Chance}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{chance_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))*0.1)+1]]}}">Chance</button>
+        </div>
+    </div><!-- fin sheet-vitals -->
+    </div><!-- fin vital stats -->
+    <div class="title-separate">Armement</div>
+    <div class="sheet-npc-weapons-header">
+        <span style="width:225px;">C. de Combat</span>
+        <span style="width:50px;">Niv</span>
+        <span style="width:55px;">Init</span>
+        <span style="width:57px;">Dom</span>
+        <span style="width:50px;">Exp</span>
+    </div>
+    <fieldset class="repeating_weapons">
+        <div class="sheet-npc-weapons-row">
+            <input type="text" name="attr_CombatCap" style="width:225px;">
+            <input type="number" name="attr_CombatNiv" style="width:50px;">
+            <input type="number" name="attr_CombatInit" style="width:55px;">
+            <input type="number" name="attr_CombatDom" style="width:57px;">
+            <input type="number" name="attr_CombatExp" style="width:50px;">
+            <button  type="roll" class="sheet-roll-btn" title="Combat à distance" name="roll_Distance" value="&{template:NPC-Skill}{{name=@{CombatCap}}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{CombatNiv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}">Roll</button>
+        </div>
+    </fieldset>
+    <div class="title-separate">Compétences</div>
+    <div class="sheet-npc-skills-header">
+        <span style="width:225px;">Compétences</span>
+        <span style="width:50px;">Niv</span>
+    </div>
+    <fieldset class="repeating_skills">
+        <div class="sheet-npc-skills-row">
+            <input type="text" name="attr_SkillName" style="width:225px;">
+            <input type="number" name="attr_SkillNiv" style="width:50px;">
+            <button  type="roll" class="sheet-roll-btn" title="Competence NPC" name="roll_Skill" value="&{template:NPC-Skill}{{name=@{SkillName}}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{SkillNiv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|AGILITÉ,@{agilite_value}|APPARENCE,@{apparence_value}|CHANCE,@{chance_value}|CONSTITUTION,@{constitution_value}|DEXTERITÉ,@{dexterite_value}|EMPATHIE,@{empathie_value}|FORCE,@{force_value}|INTELLECT,@{intellect_value}|ODORAT-GOÛT,@{odoratgout_value}|OUÏE,@{ouie_value}|VOLONTÉ,@{volonte_value}|VUE,@{vue_value}|RÊVE,@{reve_value}|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}">Roll</button>
+        </div>
+    </fieldset>
+    <div class="title-separate">Haut-Rêve</div>
+    <div class="sheet-spell-header">
+        <span style="width:120px;">Voie</span>
+        <span style="width:350px;">Titre</span>
+        <span style="width:150px;">T.M.R.</span>
+        <span style="width:100px;">Difficulté</span>
+        <span style="width:100px;">Coût en Rêve</span>
+        <span style="width:350px;">Bonus de case</span>
+    </div>
+    <fieldset class="repeating_spell">
+        <div class="sheet-spell-row">
+            <select name="attr_spellvoie" style="width:120px;text-align:center;">
+                <option value="Oniros">Oniros</option>
+                <option value="Hypnos">Hypnos</option>
+                <option value="Narcos">Narcos</option>
+                <option value="Thanatos">Thanatos</option>
+            </select>
+            <input type="text" name="attr_spelltitre" style="width:350px;text-align:center;">
+            <input type="text" name="attr_spellttmr" style="width:150px;text-align:center;">
+            <input type="text" name="attr_spelltr1" style="width:100px;text-align:center;">
+            <input type="text" name="attr_spelltr2" style="width:100px;text-align:center;">
+            <input type="text" name="attr_spelltbonuscase" style="width:350px;text-align:center;">
+        </div>
+    </fieldset>
+</div><!-- fin Onglet NPC -->
 
     <div class="sheet-npc-tab-content sheet-npc-tab2"><!-- Onglet Entite de Reve/Cauchemar -->
 

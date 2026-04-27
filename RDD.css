@@ -591,3 +591,35 @@ input.sheet-pc-tab:checked::before {
     gap: 4px;
     margin-bottom: 2px;
 }
+
+/* ===== NPC TAB 1 — CHARACTERISTICS ===== */
+.sheet-npc-char-grid {
+    display: grid;
+    grid-template-columns: 160px 50px 160px 50px;
+    align-items: center;
+    gap: 1px 3px;
+}
+.sheet-npc-char-grid > div { min-width: 0; overflow: hidden; }
+.sheet-npc-char-grid button.sheet-roll-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+/* ===== NPC TAB 1 — ARMEMENT & COMPÉTENCES ===== */
+.sheet-npc-weapons-header,
+.sheet-npc-weapons-row,
+.sheet-npc-skills-header,
+.sheet-npc-skills-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 2px;
+}
