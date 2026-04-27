@@ -380,8 +380,16 @@ input.sheet-pc-tab:checked::before {
 
 /* ===== PC TAB 1 — SKILLS SINGLE COLUMN ===== */
 .sheet-skills-col {
-    width: 320px;
     margin-top: 15px;
+}
+.sheet-skills-2col {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+.sheet-skills-left,
+.sheet-skills-right {
+    width: 280px;
 }
 .sheet-skills-subheader {
     font-weight: bold;
@@ -417,6 +425,9 @@ input.sheet-pc-tab:checked::before {
 .sheet-skill-custom {
     width: 90px;
     flex-shrink: 0;
+}
+.sheet-skills-drac-spacer {
+    height: 20px;
 }
 .sheet-skill-drac-label {
     flex: 1;
