@@ -438,3 +438,78 @@ input.sheet-pc-tab:checked::before {
     font-size: 0.8em;
 }
 
+/* ===== PC TAB 2 ===== */
+.sheet-tab2-layout {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.sheet-tab2-left { width: 450px; }
+.sheet-tab2-right { flex: 1; }
+
+.sheet-tab2-points {
+    display: grid;
+    grid-template-columns: 160px 44px 44px 12px 44px 1fr;
+    gap: 3px 8px;
+    align-items: center;
+}
+.sheet-tab2-col-label {
+    text-align: center;
+    font-style: oblique;
+}
+
+.sheet-tab2-section-title {
+    font-weight: bolder;
+    font-size: 18px;
+    font-style: oblique;
+    margin-bottom: 4px;
+}
+
+.sheet-fat-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+.sheet-fat-level {
+    width: 24px;
+    text-align: center;
+}
+.sheet-fat-group {
+    display: flex;
+    gap: 2px;
+}
+.sheet-fat-etat {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sheet-bless-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+.sheet-bless-category {
+    font-style: oblique;
+    margin: 3px 0 2px 0;
+}
+
+.sheet-tab2-stats {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.sheet-tab2-stat-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+.sheet-tab2-stat-label {
+    text-align: center;
+    width: 60px;
+}
+

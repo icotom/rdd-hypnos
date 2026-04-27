@@ -990,241 +990,151 @@
     </div><!-- fin Onglet 1 -->
 
     <div class="sheet-pc-tab-content sheet-pc-tab2"><!-- onglet 2-->
-            <div><!-- bandeau -->
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_sub.png); width:578px; height:142px;margin-top:5px;">
-            <input type="text" name="attr_character_name" class="name" disabled />
-            </div>
-            </div> <!-- fin bandeau -->
-            <div style="width:450px;"> <!-- colonne gauche -->
-            <table>
-            <tr>
-            <td style="display:hidden"></td><td style="text-align:center;font-style:oblique;padding-left:10px">Seuil</td><td style="text-align:center;font-style:oblique;padding-left:20px;">Actuel</td><td>/</td><td style="text-align:center;font-style:oblique;">Max</td>
-            </tr>
-            <tr>
-            <td>Points d'Endurance</td><td style="display:hidden"></td><td  style="padding-left:20px"><input type="number" name="attr_PE_total" class="bulle"></td><td>/</td><td><input type="number" name="attr_PE_total_max" class="bulle"></td>
-            </tr>
-            <tr>
-            <td>Points de Vie</td><td style="padding-left:10px;"><input type="number" name="attr_PV_seuil" class="bulle" value="0"></td><td  style="padding-left:20px"><input type="number" name="attr_PV_total" class="bulle" value="0"></td><td>/</td><td><input type="number" name="attr_PV_total_max" class="bulle" value="0"></td>
-            </tr>
-            <tr>
-            <td>Points de Rêve</td><td style="padding-left:10px;"><input type="number" name="attr_reve_seuil" class="bulle" value="0"></td><td  style="padding-left:20px"><input type="number" name="attr_reve_total" class="bulle" value="0"></td><td>/</td><td><input type="number" name="attr_reve_total_max" class="bulle" value="0"></td>
-                <td>
-                    <button  type="roll" class="sheet-roll-btn" title="Rêve Actuel" name="roll_Rêve" value="&{template:RDD}{{name=Rêve}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{reve_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))*0.1)+1]]}}"></button>
-                </td>
-            </tr>
-            <tr>
-            <td>Points de Chance</td><td style="padding-left:10px;"><input type="number" name="attr_chance_seuil" class="bulle" value="0"></td><td  style="padding-left:20px"><input type="number" name="attr_chance_total"  class="bulle" value="0"></td><td>/</td><td><input type="number" name="attr_chance_max_total" class="bulle" value="0"></td>
-            <td><button  type="roll" class="sheet-roll-btn" title="Chance" name="roll_Chance" value="&{template:RDD}{{name=Chance}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{chance_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))*0.1)+1]]}}"></button></td>
-            </tr>
-            </table>
-            <div  style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/bg_pc_attributes.jpg); width:450px; height:477px;margin-top:30px;">
-            <div style="margin-left:204px;"> <!-- check box éthylisme-->
-            <div style="padding-top:38px"><input type="checkbox" name="attr_ethyl1"></div>
-            <div style="margin-top:-1px"><input type="checkbox" name="attr_ethyl2" value="1"></div>
-            <div style="margin-top:-3px"><input type="checkbox" name="attr_ethyl3" value="1"></div>
-            <div style="margin-top:-2px"><input type="checkbox" name="attr_ethyl4" value="1"></div>
-            <div style="margin-top:-1px"><input type="checkbox" name="attr_ethyl5" value="1"></div>
-            <div style="margin-top:-2px"><input type="checkbox" name="attr_ethyl6" value="1"></div>
-            <div style="margin-top:-2px"><input type="checkbox" name="attr_ethyl7" value="1"></div>
-            <div style="margin-top:-1px"><input type="checkbox" name="attr_ethyl8" value="1"></div>
-            </div><!-- fin checkbox éthylisme-->
-            </div>
-            </div> <!-- fin colonne gauche-->
+        <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
+        <div class="sheet-tab2-layout">
 
+            <div class="sheet-tab2-left">
+                <div class="sheet-tab2-points">
+                    <span></span>
+                    <span class="sheet-tab2-col-label">Seuil</span>
+                    <span class="sheet-tab2-col-label">Actuel</span>
+                    <span></span>
+                    <span class="sheet-tab2-col-label">Max</span>
+                    <span></span>
+                    <span>Points d'Endurance</span>
+                    <span></span>
+                    <input type="number" name="attr_PE_total" class="sheet-bulle">
+                    <span>/</span>
+                    <input type="number" name="attr_PE_total_max" class="sheet-bulle">
+                    <span></span>
+                    <span>Points de Vie</span>
+                    <input type="number" name="attr_PV_seuil" class="sheet-bulle" value="0">
+                    <input type="number" name="attr_PV_total" class="sheet-bulle" value="0">
+                    <span>/</span>
+                    <input type="number" name="attr_PV_total_max" class="sheet-bulle" value="0">
+                    <span></span>
+                    <span>Points de Rêve</span>
+                    <input type="number" name="attr_reve_seuil" class="sheet-bulle" value="0">
+                    <input type="number" name="attr_reve_total" class="sheet-bulle" value="0">
+                    <span>/</span>
+                    <input type="number" name="attr_reve_total_max" class="sheet-bulle" value="0">
+                    <button type="roll" class="sheet-roll-btn" name="roll_Rêve" value="&{template:RDD}{{name=Rêve}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{reve_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))*0.1)+1]]}}">Rêve Actuel</button>
+                    <span>Points de Chance</span>
+                    <input type="number" name="attr_chance_seuil" class="sheet-bulle" value="0">
+                    <input type="number" name="attr_chance_total" class="sheet-bulle" value="0">
+                    <span>/</span>
+                    <input type="number" name="attr_chance_max_total" class="sheet-bulle" value="0">
+                    <button type="roll" class="sheet-roll-btn" name="roll_Chance" value="&{template:RDD}{{name=Chance}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{chance_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))*0.1)+1]]}}">Chance</button>
+                </div>
+                <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/bg_pc_attributes.jpg); width:450px; height:477px;margin-top:30px;">
+                    <div style="margin-left:204px;"><!-- check box éthylisme-->
+                        <div style="padding-top:38px"><input type="checkbox" name="attr_ethyl1"></div>
+                        <div style="margin-top:-1px"><input type="checkbox" name="attr_ethyl2" value="1"></div>
+                        <div style="margin-top:-3px"><input type="checkbox" name="attr_ethyl3" value="1"></div>
+                        <div style="margin-top:-2px"><input type="checkbox" name="attr_ethyl4" value="1"></div>
+                        <div style="margin-top:-1px"><input type="checkbox" name="attr_ethyl5" value="1"></div>
+                        <div style="margin-top:-2px"><input type="checkbox" name="attr_ethyl6" value="1"></div>
+                        <div style="margin-top:-2px"><input type="checkbox" name="attr_ethyl7" value="1"></div>
+                        <div style="margin-top:-1px"><input type="checkbox" name="attr_ethyl8" value="1"></div>
+                    </div><!-- fin checkbox éthylisme-->
+                </div>
+            </div><!-- fin colonne gauche -->
 
-            <div style="width:400px;margin-left:500px;margin-top:-630px;"><!-- colonne droite-->
-            <div> <!-- fatigue -->
-            <table>
-            <tr><td style="font-weight:bolder;font-size:18px;font-style:oblique;">Fatigue</td></tr>
-            <tr>
-            <td style="text-align:center;">0</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat0_1"></td>
-            <td><input type="checkbox" name="attr_fat0_2"></td>
-            <td><input type="checkbox" name="attr_fat0_3"></td>
-            <td><input type="checkbox" name="attr_fat0_4"></td>
-            <td><input type="checkbox" name="attr_fat0_5"></td>
-            <td  style="padding-left:20px;"><input type="checkbox" name="attr_fat0_6"></td>
-            <td><input type="checkbox" name="attr_fat0_7"></td>
-            <td><input type="checkbox" name="attr_fat0_8"></td>
-            <td><input type="checkbox" name="attr_fat0_9"></td>
-            <td><input type="checkbox" name="attr_fat0_10"></td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat0_11"></td>
-            <td><input type="checkbox" name="attr_fat0_12"></td>
-            <td><input type="checkbox" name="attr_fat0_13"></td>
-            <td><input type="checkbox" name="attr_fat0_14"></td>
-            <td><input type="checkbox" name="attr_fat0_15"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;">-1</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat1_1" value="1"></td>
-            <td><input type="checkbox" name="attr_fat1_2"></td>
-            <td><input type="checkbox" name="attr_fat1_3"></td>
-            <td><input type="checkbox" name="attr_fat1_4"></td>
-            <td><input type="checkbox" name="attr_fat1_5"></td>
-            <td  style="padding-left:20px;"><input type="checkbox" name="attr_fat1_6"></td>
-            <td><input type="checkbox" name="attr_fat1_7"></td>
-            <td><input type="checkbox" name="attr_fat1_8"></td>
-            <td><input type="checkbox" name="attr_fat1_9"></td>
-            <td><input type="checkbox" name="attr_fat1_10"></td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat1_11"></td>
-            <td><input type="checkbox" name="attr_fat1_12"></td>
-            <td><input type="checkbox" name="attr_fat1_13"></td>
-            <td><input type="checkbox" name="attr_fat1_14"></td>
-            <td><input type="checkbox" name="attr_fat1_15"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;">-2</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat2_1" value="1"></td>
-            <td><input type="checkbox" name="attr_fat2_2"></td>
-            <td><input type="checkbox" name="attr_fat2_3"></td>
-            <td><input type="checkbox" name="attr_fat2_4"></td>
-            <td><input type="checkbox" name="attr_fat2_5"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;">-3</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat3_1" value="1"></td>
-            <td><input type="checkbox" name="attr_fat3_2"></td>
-            <td><input type="checkbox" name="attr_fat3_3"></td>
-            <td><input type="checkbox" name="attr_fat3_4"></td>
-            <td><input type="checkbox" name="attr_fat3_5"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;">-4</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat4_1" value="1"></td>
-            <td><input type="checkbox" name="attr_fat4_2"></td>
-            <td><input type="checkbox" name="attr_fat4_3"></td>
-            <td><input type="checkbox" name="attr_fat4_4"></td>
-            <td><input type="checkbox" name="attr_fat4_5"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;">-5</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat5_1" value="1"></td>
-            <td><input type="checkbox" name="attr_fat5_2"></td>
-            <td><input type="checkbox" name="attr_fat5_3"></td>
-            <td><input type="checkbox" name="attr_fat5_4"></td>
-            <td><input type="checkbox" name="attr_fat5_5"></td>
-            <td COLSPAN="6" style="text-align:right;padding-right:5px;">Etat général</td><td COLSPAN="4" style="text-align:left;"><input class="bulle" type="number" name="attr_etat_general" value="0"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;">-6</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat6_1" value="1"></td>
-            <td><input type="checkbox" name="attr_fat6_2"></td>
-            <td><input type="checkbox" name="attr_fat6_3"></td>
-            <td><input type="checkbox" name="attr_fat6_4"></td>
-            <td><input type="checkbox" name="attr_fat6_5"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;">-7</td>
-            <td style="padding-left:20px;"><input type="checkbox" name="attr_fat7_1" value="1"></td>
-            <td><input type="checkbox" name="attr_fat7_2"></td>
-            <td><input type="checkbox" name="attr_fat7_3"></td>
-            <td><input type="checkbox" name="attr_fat7_4"></td>
-            <td><input type="checkbox" name="attr_fat7_5"></td>
-            </tr>
-            </table>
-            </div> <!-- fin fatigue -->
-            <div style="margin-top:40px;"> <!-- blessures -->
-            <table>
-            <tr>
-            <td style="font-weight:bolder;font-size:18px;font-style:oblique;">Blessures</td>
-            </tr>
-            <tr>
-            <td style="display=hidden"></td>
-            <td style="text-align:center;width:200px;">01-10  Contusions  End -1D4</td>
-            </tr>
-            <tr>
-            <td style="display=hidden"></td>
-            <td style="text-align:center;width:200px;">11-15    Légères    End -1D6</td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure0_1"></td>
-            <td><input type="text" name="attr_blessure0_1_desc"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure0_2"></td>
-            <td><input type="text" name="attr_blessure0_2_desc"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure0_3"></td>
-            <td><input type="text" name="attr_blessure0_3_desc"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure0_4"></td>
-            <td><input type="text" name="attr_blessure0_4_desc"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure0_5"></td>
-            <td><input type="text" name="attr_blessure0_5_desc"></td>
-            </tr>
-            <tr>
-            <td style="display=hidden;padding-top:20px;"></td>
-            <td style="text-align:center;width:200px;padding-top:20px;">16-19    Graves    End -2D6 Vie -2</td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure1_1"></td>
-            <td><input type="text" name="attr_blessure0_1_desc"></td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure1_2"></td>
-            <td><input type="text" name="attr_blessure0_2_desc"></td>
-            </tr>
-            <tr>
-            <td style="display=hidden;padding-top:20px;"></td>
-            <td style="text-align:center;width:200px;padding-top:20px;">20+   Critique    End 0 Vie -4 +</td>
-            </tr>
-            <tr>
-            <td style="text-align:center;"><input type="checkbox" name="attr_blessure3_1"></td>
-            <td><input type="text" name="attr_blessure0_1_desc"></td>
-            </tr>
-            </table>
+            <div class="sheet-tab2-right">
+                <div class="sheet-tab2-section-title">Fatigue</div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">0</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat0_1"><input type="checkbox" name="attr_fat0_2"><input type="checkbox" name="attr_fat0_3"><input type="checkbox" name="attr_fat0_4"><input type="checkbox" name="attr_fat0_5"></span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat0_6"><input type="checkbox" name="attr_fat0_7"><input type="checkbox" name="attr_fat0_8"><input type="checkbox" name="attr_fat0_9"><input type="checkbox" name="attr_fat0_10"></span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat0_11"><input type="checkbox" name="attr_fat0_12"><input type="checkbox" name="attr_fat0_13"><input type="checkbox" name="attr_fat0_14"><input type="checkbox" name="attr_fat0_15"></span>
+                </div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">-1</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat1_1" value="1"><input type="checkbox" name="attr_fat1_2"><input type="checkbox" name="attr_fat1_3"><input type="checkbox" name="attr_fat1_4"><input type="checkbox" name="attr_fat1_5"></span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat1_6"><input type="checkbox" name="attr_fat1_7"><input type="checkbox" name="attr_fat1_8"><input type="checkbox" name="attr_fat1_9"><input type="checkbox" name="attr_fat1_10"></span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat1_11"><input type="checkbox" name="attr_fat1_12"><input type="checkbox" name="attr_fat1_13"><input type="checkbox" name="attr_fat1_14"><input type="checkbox" name="attr_fat1_15"></span>
+                </div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">-2</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat2_1" value="1"><input type="checkbox" name="attr_fat2_2"><input type="checkbox" name="attr_fat2_3"><input type="checkbox" name="attr_fat2_4"><input type="checkbox" name="attr_fat2_5"></span>
+                </div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">-3</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat3_1" value="1"><input type="checkbox" name="attr_fat3_2"><input type="checkbox" name="attr_fat3_3"><input type="checkbox" name="attr_fat3_4"><input type="checkbox" name="attr_fat3_5"></span>
+                </div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">-4</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat4_1" value="1"><input type="checkbox" name="attr_fat4_2"><input type="checkbox" name="attr_fat4_3"><input type="checkbox" name="attr_fat4_4"><input type="checkbox" name="attr_fat4_5"></span>
+                </div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">-5</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat5_1" value="1"><input type="checkbox" name="attr_fat5_2"><input type="checkbox" name="attr_fat5_3"><input type="checkbox" name="attr_fat5_4"><input type="checkbox" name="attr_fat5_5"></span>
+                    <span class="sheet-fat-etat">Etat général <input class="sheet-bulle" type="number" name="attr_etat_general" value="0"></span>
+                </div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">-6</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat6_1" value="1"><input type="checkbox" name="attr_fat6_2"><input type="checkbox" name="attr_fat6_3"><input type="checkbox" name="attr_fat6_4"><input type="checkbox" name="attr_fat6_5"></span>
+                </div>
+                <div class="sheet-fat-row">
+                    <span class="sheet-fat-level">-7</span>
+                    <span class="sheet-fat-group"><input type="checkbox" name="attr_fat7_1" value="1"><input type="checkbox" name="attr_fat7_2"><input type="checkbox" name="attr_fat7_3"><input type="checkbox" name="attr_fat7_4"><input type="checkbox" name="attr_fat7_5"></span>
+                </div>
 
-            </div><!-- fin blessures -->
-            <div style="margin-top:20px; margin-left:50px;"> <!--fin carac onglet 2 colonne droite-->
-            <table>
-            <tr>
-            <td style="text-align:center;width:60px;">Sust.</td><td><input class="bulle" type="number" name="attr_sust"></td>
-            <td style="text-align:center;width:60px;">Eau</td><td><input class="bulle" type="number" name="attr_eau"></td>
+                <div style="margin-top:40px;">
+                    <div class="sheet-tab2-section-title">Blessures</div>
+                    <div class="sheet-bless-category">01-10&nbsp;&nbsp;Contusions&nbsp;&nbsp;End -1D4</div>
+                    <div class="sheet-bless-category">11-15&nbsp;&nbsp;Légères&nbsp;&nbsp;End -1D6</div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure0_1"><input type="text" name="attr_blessure0_1_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure0_2"><input type="text" name="attr_blessure0_2_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure0_3"><input type="text" name="attr_blessure0_3_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure0_4"><input type="text" name="attr_blessure0_4_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure0_5"><input type="text" name="attr_blessure0_5_desc"></div>
+                    <div class="sheet-bless-category" style="margin-top:10px;">16-19&nbsp;&nbsp;Graves&nbsp;&nbsp;End -2D6 Vie -2</div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure1_1"><input type="text" name="attr_blessure0_1_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure1_2"><input type="text" name="attr_blessure0_2_desc"></div>
+                    <div class="sheet-bless-category" style="margin-top:10px;">20+&nbsp;&nbsp;Critique&nbsp;&nbsp;End 0 Vie -4 +</div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure3_1"><input type="text" name="attr_blessure0_1_desc"></div>
+                </div>
 
-            </tr>
-            </table>
-            <table>
-            <tr>
-            <td style="text-align:center;width:60px;">Moral </td><td><input class="bulle" type="number" name="attr_moral"></td>
-            <td style="text-align:center;width:60px;color: #B31515;">dissolution</td><td><input class="bulle" type="number" name="attr_diss"></td>
-            <td style="text-align:center;width:60px;color: #3FB315;">exaltation</td><td><input class="bulle" type="number" name="attr_exal"></td>
-            </tr>
-            </table>
-            <table>
-            <tr>
-            <td colspan="2"  style="text-align:center;width:60px;">Chance</td><td><input class="bulle" type="number" name="attr_chance"></td>
-            <td style="text-align:center;width:60px;">Destinée</td><td><input class="bulle" type="number" name="attr_destinee"></td>
-            </tr>
-            </table>
-            <table>
-            <tr>
-            <td colspan="2" style="text-align:center;width:60px;">Stress</td><td><input class="bulle" type="number" name="attr_stress"></td>
-                <td>
-            <!-- Roll pour la conversion de Stress en XP - prend le Reve Actuelle - jet a 0 sans etat general -->
-                    <button  type="roll" class="sheet-roll-btn" title="Stress" name="roll_Stress" value="&{template:STRESS}{{name=Stress}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[0]]}}  {{attribut=[[@{reve_total}]]}} {{echec_part=[[ceil(0.2*floor((((0)/10)+1)*(@{reve_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((0)/10)+1)*(@{reve_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((0)/10)+1)*(@{reve_total}*5)))]]}} {{cible=[[floor((((0)/10)+1)*(@{reve_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((0)/10)+1)*(@{reve_total}*5)))*0.1)+1]]}} {{stress_t10=[[floor([[@{stress}*0.1)]]}} {{stress_t20=[[floor(@{stress}*0.2)]]}} {{stress_t30=[[floor(@{stress}*0.3)]]}} {{stress_t50=[[floor(@{stress}*0.5)]]}} {{stress_t75=[[floor(@{stress}*0.75)]]}} {{stress_t100=[[@{stress}]]}} {{stress_t150=[[floor(@{stress}*1.5)]]}}">
-                    </button>
-                </td>
-            </tr>
-            </table>
-            <table>
-            <tr>
-            <td style="text-align:center;width:60px;">Armure</td><td><input type="text" name="attr_armure"></td>
-            <td style="text-align:center;width:60px;">Déter.</td><td><input class="bulle" type="number" name="attr_deter"></td>
-            <td style="text-align:center;width:60px;">Prot.</td><td><input class="bulle" type="number" name="attr_prot"></td>
-            </tr>
-            </table>
-            </div>
+                <div class="sheet-tab2-stats">
+                    <div class="sheet-tab2-stat-row">
+                        <span class="sheet-tab2-stat-label">Sust.</span>
+                        <input class="sheet-bulle" type="number" name="attr_sust">
+                        <span class="sheet-tab2-stat-label">Eau</span>
+                        <input class="sheet-bulle" type="number" name="attr_eau">
+                    </div>
+                    <div class="sheet-tab2-stat-row">
+                        <span class="sheet-tab2-stat-label">Moral</span>
+                        <input class="sheet-bulle" type="number" name="attr_moral">
+                        <span class="sheet-tab2-stat-label" style="color:#B31515;">dissolution</span>
+                        <input class="sheet-bulle" type="number" name="attr_diss">
+                        <span class="sheet-tab2-stat-label" style="color:#3FB315;">exaltation</span>
+                        <input class="sheet-bulle" type="number" name="attr_exal">
+                    </div>
+                    <div class="sheet-tab2-stat-row">
+                        <span class="sheet-tab2-stat-label">Chance</span>
+                        <input class="sheet-bulle" type="number" name="attr_chance">
+                        <span class="sheet-tab2-stat-label">Destinée</span>
+                        <input class="sheet-bulle" type="number" name="attr_destinee">
+                    </div>
+                    <div class="sheet-tab2-stat-row">
+                        <span class="sheet-tab2-stat-label">Stress</span>
+                        <input class="sheet-bulle" type="number" name="attr_stress">
+                        <!-- Roll pour la conversion de Stress en XP - prend le Reve Actuelle - jet a 0 sans etat general -->
+                        <button type="roll" class="sheet-roll-btn" name="roll_Stress" value="&{template:STRESS}{{name=Stress}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[0]]}}  {{attribut=[[@{reve_total}]]}} {{echec_part=[[ceil(0.2*floor((((0)/10)+1)*(@{reve_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((0)/10)+1)*(@{reve_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((0)/10)+1)*(@{reve_total}*5)))]]}} {{cible=[[floor((((0)/10)+1)*(@{reve_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((0)/10)+1)*(@{reve_total}*5)))*0.1)+1]]}} {{stress_t10=[[floor([[@{stress}*0.1)]]}} {{stress_t20=[[floor(@{stress}*0.2)]]}} {{stress_t30=[[floor(@{stress}*0.3)]]}} {{stress_t50=[[floor(@{stress}*0.5)]]}} {{stress_t75=[[floor(@{stress}*0.75)]]}} {{stress_t100=[[@{stress}]]}} {{stress_t150=[[floor(@{stress}*1.5)]]}}">Stress</button>
+                    </div>
+                    <div class="sheet-tab2-stat-row">
+                        <span class="sheet-tab2-stat-label">Armure</span>
+                        <input type="text" name="attr_armure">
+                        <span class="sheet-tab2-stat-label">Déter.</span>
+                        <input class="sheet-bulle" type="number" name="attr_deter">
+                        <span class="sheet-tab2-stat-label">Prot.</span>
+                        <input class="sheet-bulle" type="number" name="attr_prot">
+                    </div>
+                </div>
+            </div><!-- fin colonne droite -->
 
-
-            </div> <!-- fin colonne gauche -->
-
-
-
+        </div><!-- fin sheet-tab2-layout -->
     </div><!-- fin onglet 2 -->
 
     <div class="sheet-pc-tab-content sheet-pc-tab3"><!-- Onglet 3 -->
