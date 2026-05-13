@@ -310,6 +310,7 @@
     <input type="radio" name="attr_tab" class="sheet-pc-tab sheet-pc-tab3" value="3" title="Archétype" />
     <input type="radio" name="attr_tab" class="sheet-pc-tab sheet-pc-tab4" value="4" title="Equipement" />
     <input type="radio" name="attr_tab" class="sheet-pc-tab sheet-pc-tab5" value="5" title="Sorts" />
+    <input type="radio" name="attr_tab" class="sheet-pc-tab sheet-pc-tab6" value="6" title="Vrai Rêve" />
 
 
     <div class="sheet-pc-tab-content sheet-pc-tab1"><!-- Onglet 1 -->
@@ -1169,6 +1170,49 @@
             </div>
         </fieldset>
     </div> <!-- fin Onglet 5 -->
+    <div class="sheet-pc-tab-content sheet-pc-tab6"><!-- Onglet 6 -->
+        <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
+        <div class="title-separate">Règles du Vrai Rêvant</div>
+        <div style="margin:10px 0; max-width:800px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</li>
+            </ul>
+        </div>
+        <div class="title-separate">Compétences de Vocation</div>
+        <div style="margin:10px 0; display:flex; flex-direction:column; gap:6px;">
+            <input type="text" name="attr_vocation1" style="width:500px;">
+            <input type="text" name="attr_vocation2" style="width:500px;">
+            <input type="text" name="attr_vocation3" style="width:500px;">
+            <input type="text" name="attr_vocation4" style="width:500px;">
+        </div>
+        <div class="title-separate">Têtes de Dragon</div>
+        <div class="sheet-vr-entry-header">
+            <span style="width:220px;">Nom</span>
+            <span>Description</span>
+        </div>
+        <fieldset class="repeating_tetesdragon">
+            <div class="sheet-vr-entry-row">
+                <input type="text" name="attr_tdnom" style="width:220px;">
+                <textarea name="attr_tddesc" style="width:600px; height:55px;"></textarea>
+            </div>
+        </fieldset>
+        <div class="title-separate">Talents Oniriques</div>
+        <div class="sheet-vr-entry-header">
+            <span style="width:220px;">Nom</span>
+            <span>Description</span>
+        </div>
+        <fieldset class="repeating_talentsoniriques">
+            <div class="sheet-vr-entry-row">
+                <input type="text" name="attr_tonom" style="width:220px;">
+                <textarea name="attr_todesc" style="width:600px; height:55px;"></textarea>
+            </div>
+        </fieldset>
+    </div> <!-- fin Onglet 6 -->
+
 
     </div>
 

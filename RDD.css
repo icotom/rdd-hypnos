@@ -51,7 +51,8 @@ input.sheet-pc-tab1:checked ~ div.sheet-pc-tab1,
 input.sheet-pc-tab2:checked ~ div.sheet-pc-tab2,
 input.sheet-pc-tab3:checked ~ div.sheet-pc-tab3,
 input.sheet-pc-tab4:checked ~ div.sheet-pc-tab4,
-input.sheet-pc-tab5:checked ~ div.sheet-pc-tab5 {
+input.sheet-pc-tab5:checked ~ div.sheet-pc-tab5,
+input.sheet-pc-tab6:checked ~ div.sheet-pc-tab6 {
     display: block;
 }
 
@@ -642,3 +643,10 @@ input.sheet-pc-tab:checked::before {
 .sheet-haut-reve-visual:checked ~ .sheet-haut-reve-on { display: inline; }
 .sheet-haut-reve-ctrl:not(:checked) ~ input.sheet-pc-tab5,
 .sheet-haut-reve-ctrl:not(:checked) ~ div.sheet-pc-tab5 { display: none !important; }
+.sheet-haut-reve-ctrl:checked ~ input.sheet-pc-tab6,
+.sheet-haut-reve-ctrl:checked ~ div.sheet-pc-tab6 { display: none !important; }
+
+/* ===== VRAI RÊVE TAB ===== */
+.sheet-vr-entry-header,
+.sheet-vr-entry-row { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 4px; }
+.sheet-vr-entry-header { font-style: italic; color: #555; }
