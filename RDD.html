@@ -1169,26 +1169,7 @@
                 <input type="text" name="attr_spelltbonuscase" style="width:350px;text-align:center;">
             </div>
         </fieldset>
-    </div> <!-- fin Onglet 5 -->
-    <div class="sheet-pc-tab-content sheet-pc-tab6"><!-- Onglet 6 -->
-        <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
-        <div class="title-separate">Règles du Vrai Rêvant</div>
-        <div style="margin:10px 0; max-width:800px;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</li>
-            </ul>
-        </div>
-        <div class="title-separate">Compétences de Vocation</div>
-        <div style="margin:10px 0; display:flex; flex-direction:column; gap:6px;">
-            <input type="text" name="attr_vocation1" style="width:500px;">
-            <input type="text" name="attr_vocation2" style="width:500px;">
-            <input type="text" name="attr_vocation3" style="width:500px;">
-            <input type="text" name="attr_vocation4" style="width:500px;">
-        </div>
+        <hr class="sheet-vr-sep">
         <div class="title-separate">Têtes de Dragon</div>
         <div class="sheet-vr-entry-header">
             <span style="width:220px;">Nom</span>
@@ -1200,6 +1181,39 @@
                 <textarea name="attr_tddesc" style="width:600px; height:55px;"></textarea>
             </div>
         </fieldset>
+    </div> <!-- fin Onglet 5 -->
+    <div class="sheet-pc-tab-content sheet-pc-tab6"><!-- Onglet 6 -->
+        <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
+        <div class="title-separate">Règles du Vrai Rêvant</div>
+        <div style="margin:10px 0; max-width:800px;">
+            <p>Les règles suivantes s'appliquent uniquement aux vrai-rêvants :</p>
+            <ul>
+                <li>Chance. Regagne 1 pt de Chance par jour (sauf usage de Chance le jour précédent).</li>
+                <li>Moral. Moral positif: ne perd son point de moral que sur un échec total. Energie du désespoir automatique. <i>Uniquement sur les compétences de vocations.</i></li>
+                <li>Stress. Meilleure conversion du Stress. <i>Uniquement sur les competences de vocations.</i></li>
+            </ul>
+        </div>
+        <hr class="sheet-vr-sep">
+        <div class="title-separate">Compétences de Vocation</div>
+        <div style="margin:10px 0; display:flex; flex-direction:column; gap:6px;">
+            <input type="text" name="attr_vocation1" style="width:500px;">
+            <input type="text" name="attr_vocation2" style="width:500px;">
+            <input type="text" name="attr_vocation3" style="width:500px;">
+            <input type="text" name="attr_vocation4" style="width:500px;">
+        </div>
+        <hr class="sheet-vr-sep">
+        <div class="title-separate">Têtes de Dragon</div>
+        <div class="sheet-vr-entry-header">
+            <span style="width:220px;">Nom</span>
+            <span>Description</span>
+        </div>
+        <fieldset class="repeating_tetesdragon">
+            <div class="sheet-vr-entry-row">
+                <input type="text" name="attr_tdnom" style="width:220px;">
+                <textarea name="attr_tddesc" style="width:600px; height:55px;"></textarea>
+            </div>
+        </fieldset>
+        <hr class="sheet-vr-sep">
         <div class="title-separate">Talents Oniriques</div>
         <div class="sheet-vr-entry-header">
             <span style="width:220px;">Nom</span>
@@ -1242,9 +1256,9 @@
                 </td>
                 </tr>
                 <tr>
-                <td style="text-align:right; height:12px; width:15px; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
+                <td style="text-align:center; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
                 <td COLSPAN="2" style="font-size:15px;text-align:center">{{cible}}</td>
-                <td class="echec" style="text-align:left;height:12px;    width:15px;    color: #B31515;    font-size:10px;margin-left:-20px">{{echec_tot}}</td>
+                <td class="echec" style="text-align:center; color: #B31515; font-size:10px;">{{echec_tot}}</td>
                 </tr>
                 {{/rollGreater() difficulte -8}}
                 <tr>
@@ -1268,25 +1282,25 @@
                     <tr>    {{#rollGreater() Roll cible}}
 
                                             {{#rollTotal() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollTotal() Roll echec_tot}}
                 </tr>
                                             {{#rollGreater() Roll echec_tot}}
-                <tr><td COLSPAN="4" class="sheet-failure">Echec Total!!!</td></tr>
+                <tr><td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td></tr>
                                             {{/rollGreater() Roll echec_tot}}
 
                                             {{#rollLess() Roll echec_tot}}
                                                             {{#rollLess() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4"class="sheet-failure">Echec</td>
+                                            <tr><td COLSPAN="4"class="sheet-echec" style="text-align:center; font-size:14px; text-transform:none; color:#8b0000;">Echec</td>
                                                             {{/rollLess() Roll echec_part}}
                                                             {{#rollTotal() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollTotal() Roll echec_part}}
                                                             {{#rollGreater() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollGreater() Roll echec_part}}
                                             {{/rollLess() Roll echec_tot}}
 
@@ -1294,33 +1308,33 @@
 
                             {{#rollTotal() Roll cible}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                             {{/rollTotal() Roll cible}}
 
                             {{#rollLess() Roll cible}}
 
                                             {{#rollTotal() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollTotal() Roll reussite_par}}
 
                                             {{#rollLess() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollLess() Roll reussite_par}}
 
                                             {{#rollGreater() Roll reussite_par}}
                                                             {{#rollGreater() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                                             {{/rollGreater() Roll signif}}
                                                             {{#rollTotal() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollTotal() Roll signif}}
                                                             {{#rollLess() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollLess() Roll signif}}
 
                                             {{/rollGreater() Roll reussite_par}}
@@ -1361,9 +1375,9 @@
                 </td>
                 </tr>
                 <tr>
-                <td style="text-align:right; height:12px; width:15px; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
+                <td style="text-align:center; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
                 <td COLSPAN="2" style="font-size:15px;text-align:center">{{cible}}</td>
-                <td class="echec" style="text-align:left;height:12px;    width:15px;    color: #B31515;    font-size:10px;margin-left:-20px">{{echec_tot}}</td>
+                <td class="echec" style="text-align:center; color: #B31515; font-size:10px;">{{echec_tot}}</td>
                 </tr>
                 {{/rollGreater() difficulte -8}}
                 <tr>
@@ -1387,25 +1401,25 @@
                     <tr>    {{#rollGreater() Roll cible}}
 
                                             {{#rollTotal() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollTotal() Roll echec_tot}}
                
                                             {{#rollGreater() Roll echec_tot}}
-                                             <tr><td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <tr><td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollGreater() Roll echec_tot}}
 
                                             {{#rollLess() Roll echec_tot}}
                                                             {{#rollLess() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4"class="sheet-failure">Echec</td>
+                                            <tr><td COLSPAN="4"class="sheet-echec" style="text-align:center; font-size:14px; text-transform:none; color:#8b0000;">Echec</td>
                                                             {{/rollLess() Roll echec_part}}
                                                             {{#rollTotal() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollTotal() Roll echec_part}}
                                                             {{#rollGreater() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollGreater() Roll echec_part}}
                                             {{/rollLess() Roll echec_tot}}
 
@@ -1413,33 +1427,33 @@
 
                             {{#rollTotal() Roll cible}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                             {{/rollTotal() Roll cible}}
 
                             {{#rollLess() Roll cible}}
 
                                             {{#rollTotal() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollTotal() Roll reussite_par}}
 
                                             {{#rollLess() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollLess() Roll reussite_par}}
 
                                             {{#rollGreater() Roll reussite_par}}
                                                             {{#rollGreater() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                                             {{/rollGreater() Roll signif}}
                                                             {{#rollTotal() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollTotal() Roll signif}}
                                                             {{#rollLess() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollLess() Roll signif}}
 
                                             {{/rollGreater() Roll reussite_par}}
@@ -1480,9 +1494,9 @@
                 </td>
                 </tr>
                 <tr style="display:none">
-                <td style="text-align:right; height:12px; width:15px; color: #3FB315; font-size:10px;" style="display:none">{{reussite_par}}</td>
+                <td style="text-align:center; color: #3FB315; font-size:10px;" style="display:none">{{reussite_par}}</td>
                 <td COLSPAN="2" style="font-size:15px;text-align:center" style="display:none">{{cible}}</td>
-                <td class="echec" style="text-align:left;height:12px;    width:15px;    color: #B31515;    font-size:10px;margin-left:-20px" style="display:none">{{echec_tot}}</td>
+                <td class="echec" style="text-align:center; color: #B31515; font-size:10px;" style="display:none">{{echec_tot}}</td>
                 </tr>
                 {{/rollGreater() difficulte -8}}
                 <tr>
@@ -1506,25 +1520,25 @@
                     <tr>    {{#rollGreater() Roll cible}}
 
                                             {{#rollTotal() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollTotal() Roll echec_tot}}
 
                                             {{#rollGreater() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollGreater() Roll echec_tot}}
 
                                             {{#rollLess() Roll echec_tot}}
                                                             {{#rollLess() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4"class="sheet-failure">Echec</td>
+                                            <tr><td COLSPAN="4"class="sheet-echec" style="text-align:center; font-size:14px; text-transform:none; color:#8b0000;">Echec</td>
                                                             {{/rollLess() Roll echec_part}}
                                                             {{#rollTotal() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollTotal() Roll echec_part}}
                                                             {{#rollGreater() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollGreater() Roll echec_part}}
                                             {{/rollLess() Roll echec_tot}}
 
@@ -1532,33 +1546,33 @@
 
                             {{#rollTotal() Roll cible}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                             {{/rollTotal() Roll cible}}
 
                             {{#rollLess() Roll cible}}
 
                                             {{#rollTotal() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollTotal() Roll reussite_par}}
 
                                             {{#rollLess() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollLess() Roll reussite_par}}
 
                                             {{#rollGreater() Roll reussite_par}}
                                                             {{#rollGreater() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                                             {{/rollGreater() Roll signif}}
                                                             {{#rollTotal() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollTotal() Roll signif}}
                                                             {{#rollLess() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollLess() Roll signif}}
 
                                             {{/rollGreater() Roll reussite_par}}
@@ -1599,9 +1613,9 @@
                 </td>
                 </tr>
                 <tr style="display:none">
-                <td style="text-align:right; height:12px; width:15px; color: #3FB315; font-size:10px;" style="display:none">{{reussite_par}}</td>
+                <td style="text-align:center; color: #3FB315; font-size:10px;" style="display:none">{{reussite_par}}</td>
                 <td COLSPAN="2" style="font-size:15px;text-align:center" style="display:none">{{cible}}</td>
-                <td class="echec" style="text-align:left;height:12px;    width:15px;    color: #B31515;    font-size:10px;margin-left:-20px" style="display:none">{{echec_tot}}</td>
+                <td class="echec" style="text-align:center; color: #B31515; font-size:10px;" style="display:none">{{echec_tot}}</td>
                 </tr>
                 {{/rollGreater() difficulte -8}}
                 <tr>
@@ -1625,25 +1639,25 @@
                     <tr>    {{#rollGreater() Roll cible}}
 
                                             {{#rollTotal() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollTotal() Roll echec_tot}}
 
                                             {{#rollGreater() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollGreater() Roll echec_tot}}
 
                                             {{#rollLess() Roll echec_tot}}
                                                             {{#rollLess() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4"class="sheet-failure">Echec</td>
+                                            <tr><td COLSPAN="4"class="sheet-echec" style="text-align:center; font-size:14px; text-transform:none; color:#8b0000;">Echec</td>
                                                             {{/rollLess() Roll echec_part}}
                                                             {{#rollTotal() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollTotal() Roll echec_part}}
                                                             {{#rollGreater() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollGreater() Roll echec_part}}
                                             {{/rollLess() Roll echec_tot}}
 
@@ -1651,33 +1665,33 @@
 
                             {{#rollTotal() Roll cible}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                             {{/rollTotal() Roll cible}}
 
                             {{#rollLess() Roll cible}}
 
                                             {{#rollTotal() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollTotal() Roll reussite_par}}
 
                                             {{#rollLess() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollLess() Roll reussite_par}}
 
                                             {{#rollGreater() Roll reussite_par}}
                                                             {{#rollGreater() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                                             {{/rollGreater() Roll signif}}
                                                             {{#rollTotal() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollTotal() Roll signif}}
                                                             {{#rollLess() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollLess() Roll signif}}
 
                                             {{/rollGreater() Roll reussite_par}}
@@ -1718,9 +1732,9 @@
                 </td>
                 </tr>
                 <tr style="display:none">
-                <td style="text-align:right; height:12px; width:15px; color: #3FB315; font-size:10px;" style="display:none">{{reussite_par}}</td>
+                <td style="text-align:center; color: #3FB315; font-size:10px;" style="display:none">{{reussite_par}}</td>
                 <td COLSPAN="2" style="font-size:15px;text-align:center" style="display:none">{{cible}}</td>
-                <td class="echec" style="text-align:left;height:12px;    width:15px;    color: #B31515;    font-size:10px;margin-left:-20px" style="display:none">{{echec_tot}}</td>
+                <td class="echec" style="text-align:center; color: #B31515; font-size:10px;" style="display:none">{{echec_tot}}</td>
                 </tr>
                 {{/rollGreater() difficulte -8}}
                 <tr>
@@ -1744,25 +1758,25 @@
                     <tr>    {{#rollGreater() Roll cible}}
 
                                             {{#rollTotal() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollTotal() Roll echec_tot}}
 
                                             {{#rollGreater() Roll echec_tot}}
-                                             <td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                             <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollGreater() Roll echec_tot}}
 
                                             {{#rollLess() Roll echec_tot}}
                                                             {{#rollLess() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4"class="sheet-failure">Echec</td>
+                                            <tr><td COLSPAN="4"class="sheet-echec" style="text-align:center; font-size:14px; text-transform:none; color:#8b0000;">Echec</td>
                                                             {{/rollLess() Roll echec_part}}
                                                             {{#rollTotal() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollTotal() Roll echec_part}}
                                                             {{#rollGreater() Roll echec_part}}
 
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollGreater() Roll echec_part}}
                                             {{/rollLess() Roll echec_tot}}
 
@@ -1770,33 +1784,33 @@
 
                             {{#rollTotal() Roll cible}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                             {{/rollTotal() Roll cible}}
 
                             {{#rollLess() Roll cible}}
 
                                             {{#rollTotal() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollTotal() Roll reussite_par}}
 
                                             {{#rollLess() Roll reussite_par}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollLess() Roll reussite_par}}
 
                                             {{#rollGreater() Roll reussite_par}}
                                                             {{#rollGreater() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                                             {{/rollGreater() Roll signif}}
                                                             {{#rollTotal() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollTotal() Roll signif}}
                                                             {{#rollLess() Roll signif}}
 
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollLess() Roll signif}}
 
                                             {{/rollGreater() Roll reussite_par}}
@@ -1837,9 +1851,9 @@
                 </td>
                 </tr>
                 <tr>
-                <td style="text-align:right; height:12px; width:15px; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
+                <td style="text-align:center; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
                 <td COLSPAN="2" style="font-size:15px;text-align:center">{{cible}}</td>
-                <td class="echec" style="text-align:left;height:12px;    width:15px;    color: #B31515;    font-size:10px;margin-left:-20px">{{echec_tot}}</td>
+                <td class="echec" style="text-align:center; color: #B31515; font-size:10px;">{{echec_tot}}</td>
                 </tr>
                 {{/rollGreater() difficulte -8}}
                 <tr>
@@ -1866,26 +1880,26 @@
 
                                             {{#rollTotal() Roll echec_tot}}
                                              <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : -4Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollTotal() Roll echec_tot}}
 
                                             {{#rollGreater() Roll echec_tot}}
                                              <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : -4Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Total!!!</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             {{/rollGreater() Roll echec_tot}}
 
                                             {{#rollLess() Roll echec_tot}}
                                                             {{#rollLess() Roll echec_part}}
                                                              <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : 0Pt</td></tr>
-                                            <tr><td COLSPAN="4"class="sheet-failure">Echec</td>
+                                            <tr><td COLSPAN="4"class="sheet-echec" style="text-align:center; font-size:14px; text-transform:none; color:#8b0000;">Echec</td>
                                                             {{/rollLess() Roll echec_part}}
                                                             {{#rollTotal() Roll echec_part}}
                                                              <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : -2Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollTotal() Roll echec_part}}
                                                             {{#rollGreater() Roll echec_part}}
                                                              <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : -2Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-failure">Echec Particulier !</td>
+                                            <tr><td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                                             {{/rollGreater() Roll echec_part}}
                                             {{/rollLess() Roll echec_tot}}
 
@@ -1893,33 +1907,33 @@
 
                             {{#rollTotal() Roll cible}}
                                             <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : 1Pt</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                             {{/rollTotal() Roll cible}}
 
                             {{#rollLess() Roll cible}}
 
                                             {{#rollTotal() Roll reussite_par}}
                                             <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : 3Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollTotal() Roll reussite_par}}
 
                                             {{#rollLess() Roll reussite_par}}
                                              <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : 3Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Particulière !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             {{/rollLess() Roll reussite_par}}
 
                                             {{#rollGreater() Roll reussite_par}}
                                                             {{#rollGreater() Roll signif}}
                                                             <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : 1Pt</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                                             {{/rollGreater() Roll signif}}
                                                             {{#rollTotal() Roll signif}}
                                                             <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : 2Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollTotal() Roll signif}}
                                                             {{#rollLess() Roll signif}}
                                                             <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Tâches : 2Pts</td></tr>
-                                            <tr><td COLSPAN="4" class="sheet-success">Réussite Significative !</td>
+                                            <tr><td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                                             {{/rollLess() Roll signif}}
 
                                             {{/rollGreater() Roll reussite_par}}
@@ -1960,9 +1974,9 @@
                 </td>
                 </tr>
                 <tr>
-                <td style="text-align:right; height:12px; width:15px; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
+                <td style="text-align:center; color: #3FB315; font-size:10px;">{{reussite_par}}</td>
                 <td COLSPAN="2" style="font-size:15px;text-align:center">{{cible}}</td>
-                <td class="echec" style="text-align:left;height:12px;    width:15px;    color: #B31515;    font-size:10px;margin-left:-20px">{{echec_tot}}</td>
+                <td class="echec" style="text-align:center; color: #B31515; font-size:10px;">{{echec_tot}}</td>
                 </tr>
                 {{/rollGreater() difficulte -8}}
                 <tr>
@@ -1988,14 +2002,14 @@
 
                                             {{#rollTotal() Roll echec_tot}}
 
-                                                    <td COLSPAN="4" class="sheet-failure sheet-caps">Echec Total!!!</td>
+                                                    <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             </tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Pas de Stress converti</td>
                                             <tr>
                                             {{/rollTotal() Roll echec_tot}}
 
                                             {{#rollGreater() Roll echec_tot}}
-                                                    <td COLSPAN="4" class="sheet-failure sheet-caps">Echec Total!!!</td>
+                                                    <td COLSPAN="4" class="sheet-echec-tot" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Echec Total!!!</td>
                                             </tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Pas de Stress converti</td>
                                             <tr>
@@ -2003,19 +2017,19 @@
 
                                             {{#rollLess() Roll echec_tot}}
                                                             {{#rollLess() Roll echec_part}}
-                                                    <td COLSPAN="4"class="sheet-failure sheet-caps">Echec</td>
+                                                    <td COLSPAN="4"class="sheet-echec" style="text-align:center; font-size:14px; text-transform:none; color:#8b0000;">Echec</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t20}} pts de Stress en pts d'Expérience (Vocation {{stress_t50}})</td>
                                                             {{/rollLess() Roll echec_part}}
                                                             {{#rollTotal() Roll echec_part}}
-                                                    <td COLSPAN="4" class="sheet-failure sheet-caps">Echec Particulier !</td>
+                                                    <td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t10}} pts de Stress en pts d'Expérience (Vocation {{stress_t30}})</td>
                                                             {{/rollTotal() Roll echec_part}}
                                                             {{#rollGreater() Roll echec_part}}
-                                                    <td COLSPAN="4" class="sheet-failure sheet-caps">Echec Particulier !</td>
+                                                    <td COLSPAN="4" class="sheet-echec-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Echec Particulier !</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t10}} pts de Stress en pts d'Expérience (Vocation {{stress_t30}})</td>
@@ -2025,7 +2039,7 @@
                             {{/rollGreater() Roll cible}}
 
                             {{#rollTotal() Roll cible}}
-                                                    <td COLSPAN="4" class="sheet-success sheet-caps">Réussite</td>
+                                                    <td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t50}} pts de Stress en pts d'Expérience (Vocation {{stress_t75}})</td>
@@ -2034,14 +2048,14 @@
                             {{#rollLess() Roll cible}}
 
                                             {{#rollTotal() Roll reussite_par}}
-                                                    <td COLSPAN="4" class="sheet-success sheet-caps">Réussite Particulière !</td>
+                                                    <td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t100}} pts de Stress en pts d'Expérience (Vocation {{stress_t150}})</td>
                                             {{/rollTotal() Roll reussite_par}}
 
                                             {{#rollLess() Roll reussite_par}}
-                                                    <td COLSPAN="4" class="sheet-success sheet-caps">Réussite Particulière !</td>
+                                                    <td COLSPAN="4" class="sheet-reussite-part" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Réussite Particulière !</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t100}} pts de Stress en pts d'Expérience (Vocation {{stress_t150}})</td>
@@ -2049,19 +2063,19 @@
 
                                             {{#rollGreater() Roll reussite_par}}
                                                             {{#rollGreater() Roll signif}}
-                                                    <td COLSPAN="4" class="sheet-success sheet-caps">Réussite</td>
+                                                    <td COLSPAN="4" class="sheet-reussite" style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Réussite</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t50}} pts de Stress en pts d'Expérience (Vocation {{stress_t75}})</td>
                                                             {{/rollGreater() Roll signif}}
                                                             {{#rollTotal() Roll signif}}
-                                                    <td COLSPAN="4" class="sheet-success sheet-caps">Réussite Significative !</td>
+                                                    <td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;" >Vous convertissez {{stress_t75}} pts de Stress en pts d'Expérience (Vocation {{stress_t100}})</td>
                                                             {{/rollTotal() Roll signif}}
                                                             {{#rollLess() Roll signif}}
-                                                    <td COLSPAN="4" class="sheet-success sheet-caps">Réussite Significative !</td>
+                                                    <td COLSPAN="4" class="sheet-reussite-sig" style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#006400;">Réussite Significative !</td>
                                             </tr>
                                             <tr>
                                                     <td COLSPAN="4" style="text-align:center;font-style:normal;font-weight:bold;color: #2E2E2E;">Vous convertissez {{stress_t75}} pts de Stress en pts d'Expérience (Vocation {{stress_t100}})</td>

@@ -650,3 +650,47 @@ input.sheet-pc-tab:checked::before {
 .sheet-vr-entry-header,
 .sheet-vr-entry-row { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 4px; }
 .sheet-vr-entry-header { font-style: italic; color: #555; }
+
+/* ===== ROLL OUTCOME COLORS ===== */
+.sheet-reussite-part {
+    text-align: center; font-style: oblique; font-weight: bold;
+    color: #00aa00; /* Green */
+}
+.sheet-reussite-sig {
+    text-align: center; font-style: oblique; font-weight: bold;
+    color: #006400; /* Deep green */
+}
+.sheet-reussite {
+    text-align: center; font-style: oblique;
+    color: #006400; /* Deep green */
+}
+.sheet-echec {
+    text-align: center; font-style: oblique;
+    color: #8b0000; /* Deep red */
+}
+.sheet-echec-part {
+    text-align: center; font-style: oblique; font-weight: bold;
+    color: #8b0000; /* Deep red */
+}
+.sheet-echec-tot {
+    text-align: center; font-style: oblique; font-weight: bold;
+    color: #cc0000; /* Red */
+}
+
+/* ===== ROLLTEMPLATE BANNER IMAGE CENTERING ===== */
+.sheet-rolltemplate-RDD .image,
+.sheet-rolltemplate-COMBAT .image,
+.sheet-rolltemplate-NPC-Skill .image,
+.sheet-rolltemplate-Entite .image,
+.sheet-rolltemplate-Animal .image,
+.sheet-rolltemplate-SKILLS .image,
+.sheet-rolltemplate-STRESS .image { display: block; margin: 0 auto; }
+
+/* ===== TAB 1 — ATTRIBUTE BUTTON FONT SIZE ===== */
+.sheet-char-grid button.sheet-roll-btn { font-size: 1em !important; }
+
+/* ===== TAB 1 — BOTTOM SPACING ===== */
+.sheet-pc-tab-content.sheet-pc-tab1 { padding-bottom: 20px; }
+
+/* Tab 6 section separators */
+.sheet-vr-sep { margin: 18px 0; border: none; border-top: 1px solid #ccc; }
