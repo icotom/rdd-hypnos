@@ -154,19 +154,25 @@ input.sheet-pc-tab:checked::before {
     border-radius: 10px;
     padding: 8px;
     margin: 4px;
+    min-width: 200px;
 }
 
-.sheet-rolltemplate-RDD th,
-.sheet-rolltemplate-COMBAT th,
-.sheet-rolltemplate-NPC-Skill th,
-.sheet-rolltemplate-Entite th,
-.sheet-rolltemplate-Animal th,
-.sheet-rolltemplate-SKILLS th,
-.sheet-rolltemplate-STRESS th {
+.sheet-rolltemplate-RDD caption,
+.sheet-rolltemplate-COMBAT caption,
+.sheet-rolltemplate-NPC-Skill caption,
+.sheet-rolltemplate-Entite caption,
+.sheet-rolltemplate-Animal caption,
+.sheet-rolltemplate-SKILLS caption,
+.sheet-rolltemplate-STRESS caption {
     font-size: 18px;
-    padding: 8px;
+    padding: 8px 8px 6px;
     font-style: normal;
     text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    caption-side: top;
+    color: #5a1a00;
+    border-bottom: 2px solid #d4af37;
 }
 
 .sheet-rolltemplate-RDD td,
@@ -178,6 +184,7 @@ input.sheet-pc-tab:checked::before {
     font-size: 10px;
     font-style: normal;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .sheet-rolltemplate-Entite td,
@@ -185,6 +192,7 @@ input.sheet-pc-tab:checked::before {
     padding: 2px;
     font-size: 10px;
     font-style: normal;
+    text-align: center;
 }
 
 /* ===== ROLL TEMPLATE — BACKGROUNDS ===== */
@@ -688,7 +696,7 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-Entite .image,
 .sheet-rolltemplate-Animal .image,
 .sheet-rolltemplate-SKILLS .image,
-.sheet-rolltemplate-STRESS .image { display: block; margin: 0 auto; }
+.sheet-rolltemplate-STRESS .image { display: block; width: 100%; }
 
 /* ===== TAB 1 — ATTRIBUTE BUTTON FONT SIZE ===== */
 .sheet-char-grid button.sheet-roll-btn { font-size: 1em !important; }
