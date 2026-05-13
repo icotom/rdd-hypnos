@@ -106,11 +106,17 @@ input.sheet-pc-tab:checked::before {
 
 .sheet-title-separate {
     font-family: serif;
-    padding: 15px;
-    font-weight: bolder;
-    font-size: 20px;
+    padding: 6px 15px;
+    font-weight: bold;
+    font-size: 13px;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #5a1a00;
+    border-top: 1px solid #d4af37;
+    border-bottom: 1px solid #d4af37;
+    display: block;
+    margin: 10px 0 6px;
 }
 
 .sheet-name {
@@ -395,14 +401,16 @@ input.sheet-pc-tab:checked::before {
 .sheet-skills-col {
     margin-top: 15px;
 }
-.sheet-skills-2col {
+.sheet-skills-3col {
     display: flex;
     gap: 20px;
     align-items: flex-start;
 }
-.sheet-skills-left,
-.sheet-skills-right {
-    width: 280px;
+.sheet-skills-col1,
+.sheet-skills-col2,
+.sheet-skills-col3 {
+    flex: 1;
+    min-width: 0;
 }
 .sheet-skills-subheader {
     font-weight: bold;
