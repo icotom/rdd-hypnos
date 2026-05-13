@@ -10,7 +10,7 @@
 }
 
 /* ===== NPC TABS ===== */
-div.sheet-npc-tab-content { display: none; }
+div.sheet-npc-tab-content { display: none; padding-top: 35px; }
 input.sheet-npc-tab1:checked ~ div.sheet-npc-tab1,
 input.sheet-npc-tab2:checked ~ div.sheet-npc-tab2,
 input.sheet-npc-tab3:checked ~ div.sheet-npc-tab3 {
@@ -19,30 +19,32 @@ input.sheet-npc-tab3:checked ~ div.sheet-npc-tab3 {
 
 input.sheet-npc-tab {
     width: 150px;
-    height: 20px;
-    top: 5px;
-    left: 6px;
-    margin: 5px;
+    height: 30px;
+    margin: 4px 3px 0;
     cursor: pointer;
     z-index: 1;
 }
 input.sheet-npc-tab::before {
     content: attr(title);
-    border-radius: .5em;
-    border: 2px solid black;
-    text-align: center;
     display: inline-block;
-    background: black;
-    color: white;
-    width: 150px;
-    height: 20px;
-    font-size: 18px;
+    width: 146px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #3a3a3a;
+    background: linear-gradient(to bottom, #383838, #1e1e1e);
+    color: #888;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: center;
+    text-transform: uppercase;
 }
 input.sheet-npc-tab:checked::before {
-    background: #009900;
-    color: black;
-    border-radius: .5em;
-    border: 2px solid black;
+    background: linear-gradient(to bottom, #1a6b2a, #0d4a15);
+    color: #a8f0b8;
+    border-color: #2a8b3a;
+    font-weight: 700;
 }
 
 /* ===== PC TABS ===== */
@@ -58,30 +60,32 @@ input.sheet-pc-tab6:checked ~ div.sheet-pc-tab6 {
 
 input.sheet-pc-tab {
     width: 150px;
-    height: 20px;
-    top: 5px;
-    left: 6px;
-    margin: 5px;
+    height: 30px;
+    margin: 4px 3px 0;
     cursor: pointer;
     z-index: 1;
 }
 input.sheet-pc-tab::before {
     content: attr(title);
-    border-radius: .5em;
-    border: 2px solid black;
-    text-align: center;
     display: inline-block;
-    background: black;
-    color: white;
-    width: 150px;
-    height: 20px;
-    font-size: 18px;
+    width: 146px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #3a3a3a;
+    background: linear-gradient(to bottom, #383838, #1e1e1e);
+    color: #888;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-align: center;
+    text-transform: uppercase;
 }
 input.sheet-pc-tab:checked::before {
-    background: #CCCCCC;
-    color: black;
-    border-radius: .5em;
-    border: 2px solid black;
+    background: linear-gradient(to bottom, #8b1a1a, #5a0c0c);
+    color: #f2d080;
+    border-color: #aa2828;
+    font-weight: 700;
 }
 
 /* ===== SHEET ELEMENTS ===== */
@@ -123,7 +127,7 @@ input.sheet-pc-tab:checked::before {
 }
 
 .sheet-npcname {
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 20px;
     height: 35px;
     width: 380px;
@@ -694,3 +698,7 @@ input.sheet-pc-tab:checked::before {
 
 /* Tab 6 section separators */
 .sheet-vr-sep { margin: 18px 0; border: none; border-top: 1px solid #ccc; }
+
+/* ===== VOIES DRACONIC — hide for Vrai Rêvants ===== */
+.sheet-drac-ctrl { display: none; }
+.sheet-drac-ctrl:not(:checked) ~ .sheet-voies-draconic { display: none; }
