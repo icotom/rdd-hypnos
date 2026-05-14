@@ -219,7 +219,10 @@ input.sheet-pc-tab:checked::before {
 }
 
 .sheet-rolltemplate-Entite table {
-    background: linear-gradient(to right bottom, #003300 10%, #004d00);
+    background:
+        radial-gradient(ellipse at 25% 75%, rgba(120,0,180,0.45) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 25%, rgba(0,40,120,0.35) 0%, transparent 55%),
+        linear-gradient(to right bottom, #0d0022 10%, #4d0080);
     padding: 10px;
     margin: 5px;
 }
@@ -252,9 +255,9 @@ input.sheet-pc-tab:checked::before {
 }
 
 .sheet-rolltemplate-Entite .inlinerollresult {
-    background-color: rgba(0,77,0,0.9);
+    background-color: rgba(45,0,77,0.9);
     border-width: 1px;
-    border-color: #008000;
+    border-color: #6600aa;
     border-style: solid;
     border-radius: 30%;
 }
