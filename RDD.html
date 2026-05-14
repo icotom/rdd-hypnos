@@ -1,9 +1,9 @@
 <input class="sheet-npc_toggle" name="attr_npc_toggle" type="hidden" value="0">
 
     <div class="sheet-npc">
-    <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab1" value="6" title="PNJ" checked="checked" />
-    <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab3" value="7" title="Animal" />
-    <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab2" value="8" title="Entité" />
+    <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab1" value="10" title="PNJ" checked="checked" />
+    <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab3" value="11" title="Animal" />
+    <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab2" value="12" title="Entité" />
     
     <div class="sheet-npc-tab-content sheet-npc-tab1"><!-- Onglet NPC -->
     <input type="text" name="attr_character_name" class="sheet-npcname" disabled />
@@ -2099,15 +2099,24 @@
         on("change:npc", function() {
             getAttrs(["npc"], function(v) {
                 if(v.npc && v.npc === "1") {
-                    setAttrs({
-                        npc_toggle: 1
-                    });
+                    setAttrs({ npc_toggle: 1, tab: 10 });
+                } else {
+                    setAttrs({ npc_toggle: 0, tab: 1 });
                 }
-                else {
-                    setAttrs({
-                        npc_toggle: 0
-                    });
-                };
+            });
+        });
+
+        on("sheet:opened", function() {
+            getAttrs(["npc_toggle", "tab"], function(v) {
+                const isNpc = v.npc_toggle === "1" || v.npc_toggle === 1;
+                const tab = parseInt(v.tab) || 1;
+                const npcTabs = [10, 11, 12];
+                const pcTabs = [1, 2, 3, 4, 5, 6];
+                if (isNpc && !npcTabs.includes(tab)) {
+                    setAttrs({ tab: 10 });
+                } else if (!isNpc && !pcTabs.includes(tab)) {
+                    setAttrs({ tab: 1 });
+                }
             });
         });
 
