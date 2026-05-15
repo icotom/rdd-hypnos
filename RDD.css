@@ -122,7 +122,7 @@ input.sheet-pc-tab:checked::before {
 
 .sheet-name {
     margin-top: 33px;
-    margin-left: 100px;
+    margin-left: 0px;
     height: 35px;
     width: 380px;
     border: none;
@@ -350,6 +350,10 @@ input.sheet-pc-tab:checked::before {
 
 /* ===== UTILITY CLASSES ===== */
 .sheet-center { text-align: center; }
+.sheet-derived {
+    background-color: #f5e6b0 !important;
+    border: 1px solid #d4af37 !important;
+}
 .sheet-roll-btn { margin: 0; line-height: 10px; height: 20px; margin-bottom: 2px; }
 .sheet-success { text-align: center; font-style: oblique; font-weight: bolder; color: #3FB315; }
 .sheet-failure { text-align: center; font-style: oblique; font-weight: bolder; color: #B31515; }
@@ -373,9 +377,9 @@ input.sheet-pc-tab:checked::before {
 /* ===== PC TAB 1 — CHARACTERISTICS ===== */
 .sheet-char-grid {
     display: grid;
-    grid-template-columns: 130px 44px 34px 130px 44px 34px;
+    grid-template-columns: 124px 46px 38px 124px 46px 38px;
     align-items: center;
-    gap: 1px 3px;
+    gap: 1px 4px;
 }
 .sheet-char-grid > div { min-width: 0; overflow: hidden; }
 .sheet-char-grid button.sheet-roll-btn {
@@ -525,7 +529,7 @@ input.sheet-pc-tab:checked::before {
 
 .sheet-tab2-stats {
     margin-top: 20px;
-    margin-left: 50px;
+    margin-left: 0px;
 }
 .sheet-tab2-stat-row {
     display: flex;
@@ -602,19 +606,25 @@ input.sheet-pc-tab:checked::before {
 .sheet-bag-item-weight { flex: 0 0 50px !important; width: 50px !important; max-width: 50px; }
 
 /* ===== PC TAB 5 ===== */
-.sheet-spell-header {
-    display: flex;
-    gap: 4px;
-    margin-top: 10px;
-    margin-bottom: 2px;
-    font-style: oblique;
-    text-align: center;
-}
-.sheet-spell-header span { text-align: center; flex-shrink: 0; }
+.sheet-spell-header,
 .sheet-spell-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 90px 320px 130px 80px 90px 300px;
     gap: 4px;
+    align-items: center;
     margin-bottom: 2px;
+}
+.sheet-spell-header {
+    margin-top: 10px;
+    font-style: oblique;
+}
+.sheet-spell-header span,
+.sheet-spell-row select,
+.sheet-spell-row input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+    text-align: left;
 }
 
 /* ===== NPC TAB 1 — CHARACTERISTICS ===== */
@@ -651,16 +661,33 @@ input.sheet-pc-tab:checked::before {
 
 /* ===== HAUT-RÊVE TOGGLE ===== */
 .sheet-haut-reve-ctrl,
-.sheet-haut-reve-visual { display: none; }
+.sheet-haut-reve-visual {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
 .sheet-haut-reve-btn {
     margin-left: 30px;
     cursor: pointer;
-    padding: 2px 8px;
-    border: 1px solid #888;
-    border-radius: 3px;
-    background: #f0f0f0;
+    padding: 4px 14px;
+    border: 1px solid #7a6000;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #1e1a00, #0d0e00);
+    color: #f2d080;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
     user-select: none;
     display: inline-block;
+    vertical-align: middle;
+}
+.sheet-haut-reve-btn:has(.sheet-haut-reve-visual:checked) {
+    background: linear-gradient(to bottom, #1a0d2e, #0d0018);
+    color: #ce93d8;
+    border-color: #7b3fa0;
 }
 .sheet-haut-reve-on { display: none; }
 .sheet-haut-reve-visual:checked ~ .sheet-haut-reve-off { display: none; }
