@@ -111,44 +111,44 @@
     <div style="margin-top:15px;">
     <div class="sheet-vitals">
         <div class="sheet-vitals-row">
-            <span class="sheet-center">Vie</span><input class="bulle" type="number" name="attr_vie">
-            <span class="sheet-center">Endurance</span><input class="bulle" type="number" name="attr_endurance">
-            <span class="sheet-center">Seuil de Constitution</span><input class="bulle sheet-derived" type="number" name="attr_const" readonly>
+            <span class="sheet-center">Vie</span><input class="sheet-bulle" type="number" name="attr_vie">
+            <span class="sheet-center">Endurance</span><input class="sheet-bulle" type="number" name="attr_endurance">
+            <span class="sheet-center">Seuil de Constitution</span><input class="sheet-bulle sheet-derived" type="number" name="attr_const" readonly>
         </div>
         <div class="sheet-vitals-row">
-            <span class="sheet-center">+Dom</span><input class="bulle" type="number" name="attr_dom">
-            <span style="text-align:center;padding:0px 5px;">Malus Armure</span><input class="bulle" type="number" name="attr_malus_armure">
-            <span style="text-align:center;padding:0px 5px;">Protection</span><input class="bulle" type="number" name="attr_prot">
+            <span class="sheet-center">+Dom</span><input class="sheet-bulle" type="number" name="attr_dom">
+            <span style="text-align:center;padding:0px 5px;">Malus Armure</span><input class="sheet-bulle" type="number" name="attr_malus_armure">
+            <span style="text-align:center;padding:0px 5px;">Protection</span><input class="sheet-bulle" type="number" name="attr_prot">
         </div>
         <div class="sheet-vitals-row sheet-etat-general">
             <span>Etat Général</span>
-            <input class="bulle" type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled">
+            <input class="sheet-bulle" type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled">
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points d'Endurance</span>
-            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="bulle">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="bulle">
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="sheet-bulle">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="sheet-bulle">
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points de Vie</span>
-            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PV_total" class="bulle" value="0">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_PV_total_max" class="bulle" value="0">
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PV_total" class="sheet-bulle" value="0">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PV_total_max" class="sheet-bulle" value="0">
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points de Rêve</span>
-            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_reve_total" class="bulle" value="0">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_reve_total_max" class="bulle" value="0">
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_reve_total" class="sheet-bulle" value="0">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_reve_total_max" class="sheet-bulle" value="0">
             <button  type="roll" class="sheet-roll-btn" title="Rêve Actuel" name="roll_Rêve" value="&{template:NPC-Skill}{{name=Rêve}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{reve_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{reve_total}*5)))*0.1)+1]]}}">Rêve</button>
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points de Chance</span>
-            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_chance_total" class="bulle" value="0">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_chance_max_total" class="bulle" value="0">
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_chance_total" class="sheet-bulle" value="0">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_chance_max_total" class="sheet-bulle" value="0">
             <button  type="roll" class="sheet-roll-btn" title="Chance" name="roll_Chance" value="&{template:NPC-Skill}{{name=Chance}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{chance_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))*0.1)+1]]}}">Chance</button>
         </div>
     </div><!-- fin sheet-vitals -->
     </div><!-- fin vital stats -->
-    <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Armement</div>
+    <div class="title-separate">Armement</div>
     <div class="sheet-npc-weapons-header">
         <span style="width:225px;">C. de Combat</span>
         <span style="width:50px;">Niv</span>
@@ -166,7 +166,7 @@
             <button  type="roll" class="sheet-roll-btn" title="Combat à distance" name="roll_Distance" value="&{template:NPC-Skill}{{name=@{CombatCap}}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{CombatNiv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{CombatNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}">Roll</button>
         </div>
     </fieldset>
-    <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Compétences</div>
+    <div class="title-separate">Compétences</div>
     <div class="sheet-npc-skills-header">
         <span style="width:225px;">Compétences</span>
         <span style="width:50px;">Niv</span>
@@ -178,28 +178,28 @@
             <button  type="roll" class="sheet-roll-btn" title="Competence NPC" name="roll_Skill" value="&{template:NPC-Skill}{{name=@{SkillName}}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{SkillNiv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|AGILITÉ,@{agilite_value}|APPARENCE,@{apparence_value}|CHANCE,@{chance_value}|CONSTITUTION,@{constitution_value}|DEXTERITÉ,@{dexterite_value}|EMPATHIE,@{empathie_value}|FORCE,@{force_value}|INTELLECT,@{intellect_value}|ODORAT-GOÛT,@{odoratgout_value}|OUÏE,@{ouie_value}|VOLONTÉ,@{volonte_value}|VUE,@{vue_value}|RÊVE,@{reve_value}|Mêlée,@{melee_value}|Tir,@{tir_value}|Lancer,@{lancer_value}|Dérobée,@{derobee_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{SkillNiv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}">Roll</button>
         </div>
     </fieldset>
-    <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Haut-Rêve</div>
+    <div class="title-separate">Haut-Rêve</div>
     <div class="sheet-spell-header">
-        <span style="width:120px;">Voie</span>
-        <span style="width:350px;">Titre</span>
-        <span style="width:150px;">T.M.R.</span>
-        <span style="width:100px;">Difficulté</span>
-        <span style="width:100px;">Coût en Rêve</span>
-        <span style="width:350px;">Bonus de case</span>
+        <span>Voie</span>
+        <span>Titre</span>
+        <span>T.M.R.</span>
+        <span>Difficulté</span>
+        <span>Coût en Rêve</span>
+        <span>Bonus de case</span>
     </div>
     <fieldset class="repeating_spell">
         <div class="sheet-spell-row">
-            <select name="attr_spellvoie" style="width:120px;text-align:center;">
+            <select name="attr_spellvoie">
                 <option value="Oniros">Oniros</option>
                 <option value="Hypnos">Hypnos</option>
                 <option value="Narcos">Narcos</option>
                 <option value="Thanatos">Thanatos</option>
             </select>
-            <input type="text" name="attr_spelltitre" style="width:350px;text-align:center;">
-            <input type="text" name="attr_spellttmr" style="width:150px;text-align:center;">
-            <input type="text" name="attr_spelltr1" style="width:100px;text-align:center;">
-            <input type="text" name="attr_spelltr2" style="width:100px;text-align:center;">
-            <input type="text" name="attr_spelltbonuscase" style="width:350px;text-align:center;">
+            <input type="text" name="attr_spelltitre">
+            <input type="text" name="attr_spellttmr">
+            <input type="text" name="attr_spelltr1">
+            <input type="text" name="attr_spelltr2">
+            <input type="text" name="attr_spelltbonuscase">
         </div>
     </fieldset>
 </div><!-- fin Onglet NPC -->
@@ -228,16 +228,16 @@
     <div style="margin-top:15px;">
     <div class="sheet-vitals">
         <div class="sheet-vitals-row">
-            <span class="sheet-center">+Dom</span><input class="bulle" type="number" name="attr_dom">
+            <span class="sheet-center">+Dom</span><input class="sheet-bulle" type="number" name="attr_dom">
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points d'Endurance</span>
-            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="bulle">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="bulle">
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="sheet-bulle">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="sheet-bulle">
         </div>
     </div><!-- fin sheet-vitals -->
     </div><!-- fin stats -->
-    <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Combat et Possession</div>
+    <div class="title-separate">Combat et Possession</div>
     <div class="sheet-npc-weapons-header">
         <span style="width:225px;">Compétences de Combat</span>
         <span style="width:50px;">Niv</span>
@@ -282,22 +282,22 @@
     <div style="margin-top:15px;">
     <div class="sheet-vitals">
         <div class="sheet-vitals-row">
-            <span class="sheet-center">+Dom</span><input class="bulle" type="number" name="attr_dom">
-            <span class="sheet-center">Protection</span><input class="bulle" type="number" name="attr_prot">
+            <span class="sheet-center">+Dom</span><input class="sheet-bulle" type="number" name="attr_dom">
+            <span class="sheet-center">Protection</span><input class="sheet-bulle" type="number" name="attr_prot">
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points de Vie</span>
-            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PV_total" class="bulle">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_PV_total_max" class="bulle">
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PV_total" class="sheet-bulle">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PV_total_max" class="sheet-bulle">
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points d'Endurance</span>
-            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="bulle">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="bulle">
+            <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="sheet-bulle">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="sheet-bulle">
         </div>
     </div><!-- fin sheet-vitals -->
     </div><!-- fin stats -->
-    <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Combat et Possession</div>
+    <div class="title-separate">Combat et Possession</div>
     <div class="sheet-npc-weapons-header">
         <span style="width:225px;">Compétences de Combat</span>
         <span style="width:50px;">Attr.</span>
@@ -450,25 +450,25 @@
         <div class="sheet-pc1-right"><!-- colonne droite -->
         <div class="sheet-vitals">
             <div class="sheet-vitals-row">
-                <span class="sheet-center">Vie</span><input class="bulle" type="number" name="attr_vie">
-                <span class="sheet-center">Endurance</span><input class="bulle" type="number" name="attr_endurance">
-                <span class="sheet-center">Seuil de Constitution</span><input class="bulle sheet-derived" type="number" name="attr_const" readonly>
-                <span class="sheet-center">Sustentation</span><input class="bulle sheet-derived" type="number" name="attr_sust" readonly>
+                <span class="sheet-center">Vie</span><input class="sheet-bulle" type="number" name="attr_vie">
+                <span class="sheet-center">Endurance</span><input class="sheet-bulle" type="number" name="attr_endurance">
+                <span class="sheet-center">Seuil de Constitution</span><input class="sheet-bulle sheet-derived" type="number" name="attr_const" readonly>
+                <span class="sheet-center">Sustentation</span><input class="sheet-bulle sheet-derived" type="number" name="attr_sust" readonly>
             </div>
             <div class="sheet-vitals-row">
-                <span class="sheet-center">+Dom</span><input class="bulle" type="number" name="attr_dom">
-                <span style="text-align:center;padding:0px 5px;">Malus Armure</span><input class="bulle" type="number" name="attr_malus_armure">
-                <span style="text-align:center;padding:0px 5px;">Encombrement</span><input class="bulle" type="number" name="attr_encombr">
+                <span class="sheet-center">+Dom</span><input class="sheet-bulle" type="number" name="attr_dom">
+                <span style="text-align:center;padding:0px 5px;">Malus Armure</span><input class="sheet-bulle" type="number" name="attr_malus_armure">
+                <span style="text-align:center;padding:0px 5px;">Encombrement</span><input class="sheet-bulle" type="number" name="attr_encombr">
             </div>
             <div class="sheet-vitals-row sheet-etat-general">
                 <span>Etat Général</span>
-                <input class="bulle" type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled">
+                <input class="sheet-bulle" type="number" name="attr_etat_general1" value="@{etat_general}" disabled="disabled">
             </div>
         </div>
-        <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Background</div>
+        <div class="title-separate" style="width:500px">Background</div>
         <textarea style="width:500px;height:200px;" name="attr_bg"></textarea>
         <div style="width:500px;margin-top:15px;"><!-- Armes -->
-                    <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Armement</div>
+                    <div class="title-separate">Armement</div>
                     <div class="sheet-weapon-header">
                         <span style="width:225px;">Compétences de Combat</span>
                         <span style="width:45px;">Niv</span>
@@ -520,9 +520,9 @@
 
         <!-- partie basse - compétences -->
         <div class="sheet-skills-col">
-        <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Compétences</div>
-        <div class="sheet-skills-3col" style="display:flex; gap:20px; align-items:flex-start;">
-        <div class="sheet-skills-col1" style="flex:1; min-width:0;">
+        <div class="title-separate">Compétences</div>
+        <div class="sheet-skills-3col">
+        <div class="sheet-skills-col1">
         <div class="sheet-skills-subheader">Générales (-4)</div>
         <div class="sheet-skill-row">
             <button  type="roll" class="sheet-roll-btn" title="Bricolage" name="roll_Bricolage" value="&{template:SKILLS}{{name=Bricolage}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{brico_value}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|AGILITÉ,@{agilite_value}|APPARENCE,@{apparence_value}|CHANCE,@{chance_value}|CONSTITUTION,@{constitution_value}|DEXTERITÉ,@{dexterite_value}|EMPATHIE,@{empathie_value}|FORCE,@{force_value}|INTELLECT,@{intellect_value}|ODORAT-GOÛT,@{odoratgout_value}|OUÏE,@{ouie_value}|VOLONTÉ,@{volonte_value}|VUE,@{vue_value}|RÊVE,@{reve_value}}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{brico_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{brico_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{brico_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{brico_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{brico_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}">Bricolage</button>
@@ -580,7 +580,7 @@
             <input type="number" name="attr_vigil_xp">
         </div>
         </div><!-- end col1 -->
-        <div class="sheet-skills-col2" style="flex:1; min-width:0;">
+        <div class="sheet-skills-col2">
         <div class="sheet-skills-subheader">Particulières (-8)</div>
         <div class="sheet-skill-row">
             <button  type="roll" class="sheet-roll-btn" title="Charpenterie" name="roll_Charpenterie" value="&{template:SKILLS}{{name=Charpenterie}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{charp_value}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|AGILITÉ,@{agilite_value}|APPARENCE,@{apparence_value}|CHANCE,@{chance_value}|CONSTITUTION,@{constitution_value}|DEXTERITÉ,@{dexterite_value}|EMPATHIE,@{empathie_value}|FORCE,@{force_value}|INTELLECT,@{intellect_value}|ODORAT-GOÛT,@{odoratgout_value}|OUÏE,@{ouie_value}|VOLONTÉ,@{volonte_value}|VUE,@{vue_value}|RÊVE,@{reve_value}}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{charp_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{charp_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}}  {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{charp_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{charp_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{charp_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}">Charpenterie</button>
@@ -663,7 +663,7 @@
             <input type="number" name="attr_trave_xp">
         </div>
         </div><!-- end col2 -->
-        <div class="sheet-skills-col3" style="flex:1; min-width:0;">
+        <div class="sheet-skills-col3">
         <div class="sheet-skills-subheader">Spécialisées (-11)</div>
         <div class="sheet-skill-row">
             <button  type="roll" class="sheet-roll-btn" title="Acrobatie" name="roll_Acrobatie" value="&{template:SKILLS}{{name=Acrobatie}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{acrob_value}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|AGILITÉ,@{agilite_value}|APPARENCE,@{apparence_value}|CHANCE,@{chance_value}|CONSTITUTION,@{constitution_value}|DEXTERITÉ,@{dexterite_value}|EMPATHIE,@{empathie_value}|FORCE,@{force_value}|INTELLECT,@{intellect_value}|ODORAT-GOÛT,@{odoratgout_value}|OUÏE,@{ouie_value}|VOLONTÉ,@{volonte_value}|VUE,@{vue_value}|RÊVE,@{reve_value}}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{acrob_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{acrob_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}}  {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{acrob_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{acrob_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{acrob_value}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}">Acrobatie</button>
@@ -791,7 +791,7 @@
         </div><!-- fin sheet-skills-col -->
 <!-- fin partie basse -->
 
-    <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:30px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Table de Résolution</div>
+    <div class="title-separate" style="margin-top:30px">Table de Résolution</div>
     <div style="margin-top:6px;">
         <img src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/rdd_table_resolution.png" style="max-width:100%; display:block;">
     </div>
@@ -899,10 +899,10 @@
                     <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure0_4"><input type="text" name="attr_blessure0_4_desc"></div>
                     <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure0_5"><input type="text" name="attr_blessure0_5_desc"></div>
                     <div class="sheet-bless-category" style="margin-top:10px;">16-19&nbsp;&nbsp;Graves&nbsp;&nbsp;End -2D6 Vie -2</div>
-                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure1_1"><input type="text" name="attr_blessure0_1_desc"></div>
-                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure1_2"><input type="text" name="attr_blessure0_2_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure1_1"><input type="text" name="attr_blessure1_1_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure1_2"><input type="text" name="attr_blessure1_2_desc"></div>
                     <div class="sheet-bless-category" style="margin-top:10px;">20+&nbsp;&nbsp;Critique&nbsp;&nbsp;End 0 Vie -4 +</div>
-                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure3_1"><input type="text" name="attr_blessure0_1_desc"></div>
+                    <div class="sheet-bless-row"><input type="checkbox" name="attr_blessure3_1"><input type="text" name="attr_blessure3_1_desc"></div>
                 </div>
 
                 <div class="sheet-tab2-stats">
@@ -1192,7 +1192,7 @@
             </div>
         </fieldset>
         <hr class="sheet-vr-sep">
-        <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Têtes de Dragon</div>
+        <div class="title-separate">Têtes de Dragon</div>
         <div class="sheet-vr-entry-header">
             <span style="width:220px;">Nom</span>
             <span>Description</span>
@@ -1206,7 +1206,7 @@
     </div> <!-- fin Onglet 5 -->
     <div class="sheet-pc-tab-content sheet-pc-tab6"><!-- Onglet 6 -->
         <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
-        <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Règles du Vrai Rêvant</div>
+        <div class="title-separate">Règles du Vrai Rêvant</div>
         <div style="margin:10px 0; max-width:800px;">
             <p>Les règles suivantes s'appliquent uniquement aux vrai-rêvants :</p>
             <ul>
@@ -1216,7 +1216,7 @@
             </ul>
         </div>
         <hr class="sheet-vr-sep">
-        <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Compétences de Vocation</div>
+        <div class="title-separate">Compétences de Vocation</div>
         <div style="margin:10px 0; display:flex; flex-direction:column; gap:6px;">
             <input type="text" name="attr_vocation1" style="width:500px;">
             <input type="text" name="attr_vocation2" style="width:500px;">
@@ -1224,7 +1224,7 @@
             <input type="text" name="attr_vocation4" style="width:500px;">
         </div>
         <hr class="sheet-vr-sep">
-        <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Têtes de Dragon</div>
+        <div class="title-separate">Têtes de Dragon</div>
         <div class="sheet-vr-entry-header">
             <span style="width:220px;">Nom</span>
             <span>Description</span>
@@ -1236,7 +1236,7 @@
             </div>
         </fieldset>
         <hr class="sheet-vr-sep">
-        <div class="title-separate" style="color:#5a1a00; border-top:1px solid #d4af37; border-bottom:1px solid #d4af37; letter-spacing:3px; font-size:13px; padding:6px 15px; margin:10px 0 6px; display:block; text-align:center; text-transform:uppercase; font-weight:bold; font-family:serif;">Talents Oniriques</div>
+        <div class="title-separate">Talents Oniriques</div>
         <div class="sheet-vr-entry-header">
             <span style="width:220px;">Nom</span>
             <span>Description</span>
@@ -2130,16 +2130,6 @@
                 const seuil_constitution = Math.floor(constitution / 3);
                 const sust = Math.ceil(((taille - 5) / 4) + 1);
                 setAttrs({ melee_value: melee, tir_value: tir, lancer_value: lancer, derobee_value: derobee, const: seuil_constitution, sust: sust });
-            });
-        });
-
-        on("change:npc", function() {
-            getAttrs(["npc"], function(v) {
-                if(v.npc && v.npc === "1") {
-                    setAttrs({ npc_toggle: 1, tab: 10 });
-                } else {
-                    setAttrs({ npc_toggle: 0, tab: 1 });
-                }
             });
         });
 

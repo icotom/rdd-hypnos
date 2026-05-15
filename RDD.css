@@ -45,7 +45,6 @@ input.sheet-npc-tab:checked::before {
     background: linear-gradient(to bottom, #1a6b2a, #0d4a15);
     color: #a8f0b8;
     border-color: #2a8b3a;
-    font-weight: 700;
 }
 
 /* ===== PC TABS ===== */
@@ -86,7 +85,6 @@ input.sheet-pc-tab:checked::before {
     background: linear-gradient(to bottom, #8b1a1a, #5a0c0c);
     color: #f2d080;
     border-color: #aa2828;
-    font-weight: 700;
 }
 
 /* ===== SHEET ELEMENTS ===== */
@@ -101,11 +99,7 @@ input.sheet-pc-tab:checked::before {
     font-family: 'Roboto', sans-serif;
 }
 
-.sheet-title {
-    display: inline-block;
-}
-
-.sheet-title-separate {
+.title-separate {
     font-family: serif;
     padding: 6px 15px;
     font-weight: bold;
@@ -156,8 +150,6 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-STRESS table {
     border-collapse: separate;
     border-spacing: 0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 10px;
     padding: 8px;
     margin: 4px;
@@ -279,8 +271,6 @@ input.sheet-pc-tab:checked::before {
     border-spacing: 0;
     border-collapse: separate;
     border-radius: 5px;
-    -moz-box-shadow: 2px 2px 5px #000;
-    -webkit-box-shadow: 2px 2px 5px #000;
     box-shadow: 2px 2px 5px #000;
     overflow: hidden;
 }
@@ -355,9 +345,6 @@ input.sheet-pc-tab:checked::before {
     border: 1px solid #d4af37 !important;
 }
 .sheet-roll-btn { margin: 0; line-height: 10px; height: 20px; margin-bottom: 2px; }
-.sheet-success { text-align: center; font-style: oblique; font-weight: bolder; color: #3FB315; }
-.sheet-failure { text-align: center; font-style: oblique; font-weight: bolder; color: #B31515; }
-.sheet-caps { text-transform: uppercase; }
 
 /* ===== PC TAB 1 — TWO-COLUMN LAYOUT ===== */
 .sheet-pc1-top {
@@ -757,15 +744,6 @@ input.sheet-pc-tab:checked::before {
     align-items: center;
     padding: 80px 20px 60px;
     gap: 16px;
-}
-.sheet-setup-title {
-    font-family: serif;
-    font-size: 26px;
-    font-weight: bold;
-    color: #5a1a00;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    text-align: center;
 }
 .sheet-setup-subtitle {
     font-family: serif;
