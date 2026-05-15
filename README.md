@@ -11,3 +11,5 @@ Principales differences:
 - simplification de la partie competence
 - ajout d'un boutton pour le jet de Stress
 - ajout de feuilles de personnage simplifiees pour les PNJs, creatures, et entite de cauchemar (leurs jets ont un style different des jets de des PJs)
+
+Version de Phoxounet https://github.com/Roll20/roll20-character-sheets/tree/master/Reve%20de%20Dragon%20-%20french
