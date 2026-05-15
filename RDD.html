@@ -1,4 +1,22 @@
-<input class="sheet-npc_toggle" name="attr_npc_toggle" type="hidden" value="0">
+<div class="sheet-setup">
+    <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px; margin-top:5px;"></div>
+    <div class="sheet-setup-body">
+        <div class="sheet-setup-title">Rêve de Dragon — Hypnos</div>
+        <div class="sheet-setup-subtitle">Choisissez le type de fiche pour ce personnage</div>
+        <div class="sheet-setup-buttons">
+            <label class="sheet-setup-btn">
+                <input type="radio" name="attr_npc_toggle" class="sheet-choice-pc" value="0">
+                <span class="sheet-setup-btn-label">Personnage Joueur</span>
+                <span class="sheet-setup-btn-sub">PC</span>
+            </label>
+            <label class="sheet-setup-btn">
+                <input type="radio" name="attr_npc_toggle" class="sheet-choice-npc" value="1">
+                <span class="sheet-setup-btn-label">Personnage Non-Joueur</span>
+                <span class="sheet-setup-btn-sub">PNJ / NPC</span>
+            </label>
+        </div>
+    </div>
+</div>
 
     <div class="sheet-npc">
     <input type="radio" name="attr_tab" class="sheet-npc-tab sheet-npc-tab1" value="10" title="PNJ" checked="checked" />
@@ -2106,9 +2124,21 @@
             });
         });
 
+        on("change:npc_toggle", function() {
+            getAttrs(["npc_toggle"], function(v) {
+                if (v.npc_toggle === "1") {
+                    setAttrs({ tab: 10 });
+                } else if (v.npc_toggle === "0") {
+                    setAttrs({ tab: 1 });
+                }
+            });
+        });
+
         on("sheet:opened", function() {
             getAttrs(["npc_toggle", "tab"], function(v) {
-                const isNpc = v.npc_toggle === "1" || v.npc_toggle === 1;
+                const toggle = v.npc_toggle;
+                if (toggle !== "0" && toggle !== "1") return;
+                const isNpc = toggle === "1";
                 const tab = parseInt(v.tab) || 1;
                 const npcTabs = [10, 11, 12];
                 const pcTabs = [1, 2, 3, 4, 5, 6];

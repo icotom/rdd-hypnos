@@ -1,13 +1,14 @@
-/* ===== PC/NPC TAB VISIBILITY ===== */
-.sheet-npc,
-.sheet-pc {
-    display: none;
-}
+/* ===== SETUP PAGE / PC-NPC VISIBILITY ===== */
+.sheet-choice-pc,
+.sheet-choice-npc { display: none; }
 
-.sheet-npc_toggle[value="0"] ~ .sheet-pc,
-.sheet-npc_toggle[value="1"] ~ .sheet-npc {
-    display: block;
-}
+.sheet-setup { display: block; }
+.sheet-pc, .sheet-npc { display: none; }
+
+.charsheet:has(.sheet-choice-pc:checked) .sheet-setup { display: none; }
+.charsheet:has(.sheet-choice-pc:checked) .sheet-pc { display: block; }
+.charsheet:has(.sheet-choice-npc:checked) .sheet-setup { display: none; }
+.charsheet:has(.sheet-choice-npc:checked) .sheet-npc { display: block; }
 
 /* ===== NPC TABS ===== */
 div.sheet-npc-tab-content { display: none; padding-top: 35px; }
@@ -721,3 +722,64 @@ input.sheet-pc-tab:checked::before {
 /* ===== VOIES DRACONIC — hide for Vrai Rêvants ===== */
 .sheet-drac-ctrl { display: none; }
 .sheet-drac-ctrl:not(:checked) ~ .sheet-voies-draconic { display: none; }
+
+/* ===== SETUP PAGE ===== */
+.sheet-setup-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 60px;
+    gap: 16px;
+}
+.sheet-setup-title {
+    font-family: serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #5a1a00;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.sheet-setup-subtitle {
+    font-family: serif;
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.sheet-setup-buttons {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+.sheet-setup-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 30px 60px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+    color: #d4af37;
+    user-select: none;
+}
+.sheet-setup-btn:hover {
+    background: linear-gradient(to bottom, #3a2000, #220000);
+    border-color: #f0c830;
+    color: #f0c830;
+}
+.sheet-setup-btn-label {
+    font-family: serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.sheet-setup-btn-sub {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 6px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
