@@ -116,7 +116,7 @@
             <span class="sheet-center">Seuil de Constitution</span><input class="sheet-bulle sheet-derived" type="number" name="attr_const" readonly>
         </div>
         <div class="sheet-vitals-row">
-            <span class="sheet-center">+Dom</span><input class="sheet-bulle" type="number" name="attr_dom">
+            <span class="sheet-center">+Dom</span><input class="sheet-bulle sheet-derived" type="number" name="attr_dom" readonly>
             <span style="text-align:center;padding:0px 5px;">Malus Armure</span><input class="sheet-bulle" type="number" name="attr_malus_armure">
             <span style="text-align:center;padding:0px 5px;">Protection</span><input class="sheet-bulle" type="number" name="attr_prot">
         </div>
@@ -456,7 +456,7 @@
                 <span class="sheet-center">Sustentation</span><input class="sheet-bulle sheet-derived" type="number" name="attr_sust" readonly>
             </div>
             <div class="sheet-vitals-row">
-                <span class="sheet-center">+Dom</span><input class="sheet-bulle" type="number" name="attr_dom">
+                <span class="sheet-center">+Dom</span><input class="sheet-bulle sheet-derived" type="number" name="attr_dom" readonly>
                 <span style="text-align:center;padding:0px 5px;">Malus Armure</span><input class="sheet-bulle" type="number" name="attr_malus_armure">
                 <span style="text-align:center;padding:0px 5px;">Encombrement</span><input class="sheet-bulle" type="number" name="attr_encombr">
             </div>
@@ -480,8 +480,8 @@
                 <div class="sheet-weapon-row">
                     <span style="width:225px;">Esquive</span>
                     <input type="number" name="attr_esquive_niv" value="-6" style="width:45px;">
-                    <input type="number" name="attr_esquive_init" style="width:45px;">
-                    <input type="number" name="attr_esquive_dom" style="width:45px;">
+                    <span style="width:45px;flex-shrink:0;"></span>
+                    <span style="width:45px;flex-shrink:0;"></span>
                     <input type="number" name="attr_esquive_exp" style="width:45px;">
                     <button type="roll" class="sheet-roll-btn" title="Esquive" name="roll_Esquive" value="&{template:COMBAT}{{name=Esquive}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{esquive_niv}+@{etat_general}]]}}  {{attribut=[[?{Attribut ?|Dérobée,@{derobee_value}|Mêlée,@{melee_value}|AGILITÉ,@{agilite_value}}]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{esquive_niv}+@{etat_general})/10)+1)*(?{Attribut ?}*5)))*0.1)+1]]}}"></button>
                 </div>
@@ -1167,7 +1167,16 @@
 
     <div class="sheet-pc-tab-content sheet-pc-tab5"><!-- Onglet 5 -->
         <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/header_wide.png); width:1193px; height:86px;margin-top:5px;"></div>
-        <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/bg_magic_header.jpg); width:596px; height:102px;margin-top:5px;"></div>
+        <div class="title-separate">Don de Haut-Rêve</div>
+        <div style="margin:10px 0; max-width:800px;">
+            <p>Ce don permet d'accéder aux Terres Médianes en demi-rêve et est indispensable pour déchiffrer les signes draconics et développer les 4 compétences de magie.</p>
+            <ul>
+                <li>Monter en Terres Médianes. Monter en TMR coûte un point de rêve. Monter en déplacement accéléré coute deux points de rêve.</li>
+                <li>Récupération de la Chance. Les points de Chance ne peuvent être récupérés qu'avec l'usage d'un point de Destinée.</li>
+            </ul>
+        </div>
+        <hr class="sheet-vr-sep">
+        <div class="title-separate">Sorts &amp; Rituels</div>
         <div class="sheet-spell-header">
             <span>Voie</span>
             <span>Titre</span>
@@ -2129,7 +2138,9 @@
                 const derobee = Math.floor(((21 - taille) + agilite) / 2);
                 const seuil_constitution = Math.floor(constitution / 3);
                 const sust = Math.ceil(((taille - 5) / 4) + 1);
-                setAttrs({ melee_value: melee, tir_value: tir, lancer_value: lancer, derobee_value: derobee, const: seuil_constitution, sust: sust });
+                const domBase = Math.floor((taille + force) / 2);
+                const dom = domBase <= 7 ? -1 : Math.max(0, Math.floor((domBase - 10) / 2));
+                setAttrs({ melee_value: melee, tir_value: tir, lancer_value: lancer, derobee_value: derobee, const: seuil_constitution, sust: sust, dom: dom });
             });
         });
 
