@@ -4,6 +4,11 @@
     src: url('https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/Heures_Draconiques.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Abbot';
+    src: url('https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/ABBOT.TTF') format('truetype');
+}
+
 .sheet-heure-symbol {
     font-family: 'HeuresDraconiques';
     font-size: 22px;
@@ -134,14 +139,19 @@ input.sheet-pc-tab:checked::before {
 .sheet-name {
     margin-top: 33px;
     margin-left: 0px;
-    height: 35px;
+    height: 40px;
     width: 380px;
     border: none;
+    border-top: 2px solid #d4af37;
+    border-bottom: 2px solid #d4af37;
     font-size: 30px;
     font-weight: bolder;
     text-transform: capitalize;
-    font-family: serif;
+    font-family: 'Abbot', serif;
     text-align: center;
+    color: #5a1a00;
+    background: transparent;
+    padding: 2px 0;
 }
 
 .sheet-npcname {
