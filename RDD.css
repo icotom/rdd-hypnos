@@ -1,5 +1,5 @@
 /* ===== GOOGLE FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Skranji&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Metamorphous&family=Uncial+Antiqua&display=swap');
 
 /* ===== CUSTOM FONTS ===== */
 @font-face {
@@ -142,33 +142,19 @@ input.sheet-pc-tab:checked::before {
 .sheet-name {
     margin-top: 33px;
     margin-left: 0px;
-    height: 40px;
-    width: 380px;
+    height: 44px;
+    width: 450px;
     border: none;
-    border-top: 2px solid #d4af37;
-    border-bottom: 2px solid #d4af37;
-    font-size: 30px;
+    border-top: 2px solid #d4af37 !important;
+    border-bottom: 2px solid #d4af37 !important;
+    font-size: 34px;
     font-weight: bolder;
     text-transform: capitalize;
-    font-family: 'Abbot', serif;
+    font-family: 'Lavishly Yours', serif !important;
     text-align: center;
     color: #5a1a00;
-    background: transparent;
+    background: linear-gradient(to right, transparent, rgba(225, 205, 155, 0.2) 15%, rgba(225, 205, 155, 0.2) 85%, transparent);
     padding: 2px 0;
-}
-
-.sheet-animalname {
-    font-family: 'Skranji', serif;
-    color: #5c2800;
-    border-top: 2px solid #cc6600;
-    border-bottom: 2px solid #cc6600;
-}
-
-.sheet-entitename {
-    font-family: 'Metamorphous', serif;
-    color: #4d0080;
-    border-top: 2px solid #7b3fa0;
-    border-bottom: 2px solid #7b3fa0;
 }
 
 .sheet-npcname {
@@ -182,11 +168,25 @@ input.sheet-pc-tab:checked::before {
     font-size: 22px;
     font-weight: bolder;
     text-transform: capitalize;
-    font-family: 'Abbot', serif;
+    font-family: 'Metamorphous', serif !important;
     text-align: center;
     color: #5a1a00;
-    background: transparent;
+    background: linear-gradient(to right, transparent, rgba(225, 205, 155, 0.2) 15%, rgba(225, 205, 155, 0.2) 85%, transparent);
     padding: 2px 0;
+}
+
+.sheet-entitename {
+    font-family: 'Metamorphous', serif !important;
+    color: #4d0080;
+    border-top: 2px solid #7b3fa0;
+    border-bottom: 2px solid #7b3fa0;
+}
+
+.sheet-animalname {
+    font-family: 'Uncial Antiqua', serif !important;
+    color: #5c2800;
+    border-top: 2px solid #cc6600;
+    border-bottom: 2px solid #cc6600;
 }
 
 /* ===== ROLL TEMPLATE — BASE STRUCTURE (all RDD templates) ===== */
@@ -427,7 +427,7 @@ input.sheet-pc-tab:checked::before {
     align-items: start;
 }
 .sheet-pc1-left { width: 450px; }
-.sheet-pc1-right { padding: 15px; }
+.sheet-pc1-right { padding-left: 15px; }
 
 /* ===== PC TAB 1 — PERSONAL INFO ===== */
 .sheet-info-grid { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
