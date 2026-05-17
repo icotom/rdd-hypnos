@@ -147,7 +147,9 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-Entite table,
 .sheet-rolltemplate-Animal table,
 .sheet-rolltemplate-SKILLS table,
-.sheet-rolltemplate-STRESS table {
+.sheet-rolltemplate-STRESS table,
+.sheet-rolltemplate-ENDURANCE table,
+.sheet-rolltemplate-VIE table {
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 10px;
@@ -162,7 +164,8 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-Entite caption,
 .sheet-rolltemplate-Animal caption,
 .sheet-rolltemplate-SKILLS caption,
-.sheet-rolltemplate-STRESS caption {
+.sheet-rolltemplate-STRESS caption,
+.sheet-rolltemplate-ENDURANCE caption {
     font-size: 18px;
     padding: 8px 8px 6px;
     font-style: normal;
@@ -174,11 +177,25 @@ input.sheet-pc-tab:checked::before {
     border-bottom: 2px solid #d4af37;
 }
 
+.sheet-rolltemplate-VIE caption {
+    font-size: 18px;
+    padding: 8px 8px 6px;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    caption-side: top;
+    color: #3d0000;
+    border-bottom: 2px solid #d4af37;
+}
+
 .sheet-rolltemplate-RDD td,
 .sheet-rolltemplate-COMBAT td,
 .sheet-rolltemplate-NPC-Skill td,
 .sheet-rolltemplate-SKILLS td,
-.sheet-rolltemplate-STRESS td {
+.sheet-rolltemplate-STRESS td,
+.sheet-rolltemplate-ENDURANCE td,
+.sheet-rolltemplate-VIE td {
     padding: 2px;
     font-size: 10px;
     font-style: normal;
@@ -197,8 +214,13 @@ input.sheet-pc-tab:checked::before {
 /* ===== ROLL TEMPLATE — BACKGROUNDS ===== */
 .sheet-rolltemplate-RDD table,
 .sheet-rolltemplate-COMBAT table,
-.sheet-rolltemplate-SKILLS table {
+.sheet-rolltemplate-SKILLS table,
+.sheet-rolltemplate-ENDURANCE table {
     background: linear-gradient(to right bottom, #F6F4E6 60%, #C4C3B8);
+}
+
+.sheet-rolltemplate-VIE table {
+    background: linear-gradient(to right bottom, #F4EAEA 60%, #BBA0A0);
 }
 
 .sheet-rolltemplate-STRESS table {
@@ -239,7 +261,9 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-COMBAT .inlinerollresult,
 .sheet-rolltemplate-NPC-Skill .inlinerollresult,
 .sheet-rolltemplate-SKILLS .inlinerollresult,
-.sheet-rolltemplate-STRESS .inlinerollresult {
+.sheet-rolltemplate-STRESS .inlinerollresult,
+.sheet-rolltemplate-ENDURANCE .inlinerollresult,
+.sheet-rolltemplate-VIE .inlinerollresult {
     background-color: rgba(255,255,255,0.9);
     border-width: 1px;
     border-color: #BEAAA0;
@@ -722,7 +746,9 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-Entite .image,
 .sheet-rolltemplate-Animal .image,
 .sheet-rolltemplate-SKILLS .image,
-.sheet-rolltemplate-STRESS .image { display: block; width: 100%; }
+.sheet-rolltemplate-STRESS .image,
+.sheet-rolltemplate-ENDURANCE .image,
+.sheet-rolltemplate-VIE .image { display: block; width: 100%; }
 
 /* ===== TAB 1 — ATTRIBUTE BUTTON FONT SIZE ===== */
 .sheet-char-grid button.sheet-roll-btn { font-size: 1em !important; }

@@ -111,8 +111,8 @@
     <div style="margin-top:15px;">
     <div class="sheet-vitals">
         <div class="sheet-vitals-row">
-            <span class="sheet-center">Vie</span><input class="sheet-bulle" type="number" name="attr_vie">
-            <span class="sheet-center">Endurance</span><input class="sheet-bulle" type="number" name="attr_endurance">
+            <span class="sheet-center">Vie</span><input class="sheet-bulle sheet-derived" type="number" name="attr_vie" readonly>
+            <span class="sheet-center">Endurance</span><input class="sheet-bulle sheet-derived" type="number" name="attr_endurance" readonly>
             <span class="sheet-center">Seuil de Constitution</span><input class="sheet-bulle sheet-derived" type="number" name="attr_const" readonly>
         </div>
         <div class="sheet-vitals-row">
@@ -127,12 +127,12 @@
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points d'Endurance</span>
             <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PE_total" class="sheet-bulle">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="sheet-bulle">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PE_total_max" class="sheet-bulle sheet-derived" readonly>
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points de Vie</span>
             <span style="font-style:italic;">Actuel</span><input type="number" name="attr_PV_total" class="sheet-bulle" value="0">
-            <span style="font-style:italic;">Max</span><input type="number" name="attr_PV_total_max" class="sheet-bulle" value="0">
+            <span style="font-style:italic;">Max</span><input type="number" name="attr_PV_total_max" class="sheet-bulle sheet-derived" value="0" readonly>
         </div>
         <div class="sheet-vitals-row">
             <span style="width:140px;">Points de Rêve</span>
@@ -450,8 +450,8 @@
         <div class="sheet-pc1-right"><!-- colonne droite -->
         <div class="sheet-vitals">
             <div class="sheet-vitals-row">
-                <span class="sheet-center">Vie</span><input class="sheet-bulle" type="number" name="attr_vie">
-                <span class="sheet-center">Endurance</span><input class="sheet-bulle" type="number" name="attr_endurance">
+                <span class="sheet-center">Vie</span><input class="sheet-bulle sheet-derived" type="number" name="attr_vie" readonly>
+                <span class="sheet-center">Endurance</span><input class="sheet-bulle sheet-derived" type="number" name="attr_endurance" readonly>
                 <span class="sheet-center">Seuil de Constitution</span><input class="sheet-bulle sheet-derived" type="number" name="attr_const" readonly>
                 <span class="sheet-center">Sustentation</span><input class="sheet-bulle sheet-derived" type="number" name="attr_sust" readonly>
             </div>
@@ -814,14 +814,14 @@
                     <span></span>
                     <input type="number" name="attr_PE_total" class="sheet-bulle">
                     <span>/</span>
-                    <input type="number" name="attr_PE_total_max" class="sheet-bulle">
-                    <span></span>
+                    <input type="number" name="attr_PE_total_max" class="sheet-bulle sheet-derived" readonly>
+                    <button type="roll" class="sheet-roll-btn" name="roll_Endurance" value="&{template:ENDURANCE}{{name=Endurance}}{{Roll=[[1d20cs1cf20]]}}{{seuil=[[@{PE_total}]]}}{{one=[[1]]}}{{twenty=[[20]]}}">Endurance</button>
                     <span>Points de Vie</span>
                     <input type="number" name="attr_PV_seuil" class="sheet-bulle" value="0">
                     <input type="number" name="attr_PV_total" class="sheet-bulle" value="0">
                     <span>/</span>
-                    <input type="number" name="attr_PV_total_max" class="sheet-bulle" value="0">
-                    <span></span>
+                    <input type="number" name="attr_PV_total_max" class="sheet-bulle sheet-derived" value="0" readonly>
+                    <button type="roll" class="sheet-roll-btn" name="roll_Vie" value="&{template:VIE}{{name=Vie}}{{Roll=[[1d20cs1cf20]]}}{{seuil=[[@{PV_total}]]}}{{one=[[1]]}}{{twenty=[[20]]}}">Vie</button>
                     <span>Points de Rêve</span>
                     <input type="number" name="attr_reve_seuil" class="sheet-bulle" value="0">
                     <input type="number" name="attr_reve_total" class="sheet-bulle" value="0">
@@ -1491,6 +1491,102 @@
     </rolltemplate>
     <!-- end roll template combat -->
 
+    <!-- Roll Template - Jet d'Endurance (d20 vs seuil) -->
+    <rolltemplate class="sheet-rolltemplate-ENDURANCE">
+            <table style="table-layout:fixed; width:220px;">
+                <caption>{{name}}</caption>
+                <tr>
+                <td align="center" valign="middle" style="margin:-25px;display:none">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_epees.png" />
+                </td>
+                </tr>
+                <tr>
+                <td style="text-align:center; padding:4px 0;"><span style="font-size:18px; font-weight:bold;">{{seuil}}</span></td>
+                </tr>
+                <tr>
+                <td align="center" valign="middle" style="text-align:center; padding:6px 0;">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_epees.png" />
+                </td>
+                </tr>
+                <tr>
+                <td style="text-align:center; font-weight:bold;">D20 : {{Roll}}</td>
+                </tr>
+                <tr>
+                <td align="center" valign="middle" style="margin:-25px;display:none">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_epees.png" />
+                </td>
+                </tr>
+                {{#rollLess() Roll twenty}}
+                    {{#rollTotal() Roll one}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#00aa00;">Succès Critique !</td></tr>
+                    {{/rollTotal() Roll one}}
+                    {{#rollGreater() Roll one}}
+                        {{#rollLess() Roll seuil}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Succès</td></tr>
+                        {{/rollLess() Roll seuil}}
+                        {{#rollTotal() Roll seuil}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; color:#006400;">Succès</td></tr>
+                        {{/rollTotal() Roll seuil}}
+                        {{#rollGreater() Roll seuil}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#8b0000;">Échec · Sonné</td></tr>
+                        {{/rollGreater() Roll seuil}}
+                    {{/rollGreater() Roll one}}
+                {{/rollLess() Roll twenty}}
+                {{#rollTotal() Roll twenty}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#cc0000;">Échec !</td></tr>
+                {{/rollTotal() Roll twenty}}
+            </table>
+    </rolltemplate>
+    <!-- end roll template Endurance -->
+
+    <!-- Roll Template - Jet de Vie (d20 vs seuil) -->
+    <rolltemplate class="sheet-rolltemplate-VIE">
+            <table style="table-layout:fixed; width:220px;">
+                <caption>{{name}}</caption>
+                <tr>
+                <td align="center" valign="middle" style="margin:-25px;display:none">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_12_chateau-dormant.png" />
+                </td>
+                </tr>
+                <tr>
+                <td style="text-align:center; padding:4px 0;"><span style="font-size:18px; font-weight:bold;">{{seuil}}</span></td>
+                </tr>
+                <tr>
+                <td align="center" valign="middle" style="text-align:center; padding:6px 0;">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_12_chateau-dormant.png" />
+                </td>
+                </tr>
+                <tr>
+                <td style="text-align:center; font-weight:bold;">D20 : {{Roll}}</td>
+                </tr>
+                <tr>
+                <td align="center" valign="middle" style="margin:-25px;display:none">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_12_chateau-dormant.png" />
+                </td>
+                </tr>
+                {{#rollLess() Roll twenty}}
+                    {{#rollTotal() Roll one}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#008800;">Succès Critique !</td></tr>
+                    {{/rollTotal() Roll one}}
+                    {{#rollGreater() Roll one}}
+                        {{#rollLess() Roll seuil}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; color:#005500;">Succès</td></tr>
+                        {{/rollLess() Roll seuil}}
+                        {{#rollTotal() Roll seuil}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; color:#005500;">Succès</td></tr>
+                        {{/rollTotal() Roll seuil}}
+                        {{#rollGreater() Roll seuil}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#990000;">Échec (-1 PV)</td></tr>
+                        {{/rollGreater() Roll seuil}}
+                    {{/rollGreater() Roll one}}
+                {{/rollLess() Roll twenty}}
+                {{#rollTotal() Roll twenty}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#aa0000;">Échec Critique !</td></tr>
+                {{/rollTotal() Roll twenty}}
+            </table>
+    </rolltemplate>
+    <!-- end roll template Vie -->
+
     <!-- Roll Template - jets des NPCs -->
     <rolltemplate class="sheet-rolltemplate-NPC-Skill">
             <table style="table-layout:fixed; width:220px;">
@@ -2122,8 +2218,8 @@
             });
         });
 
-        on("change:force_value change:agilite_value change:vue_value change:dexterite_value change:Taille change:constitution_value", function() {
-            getAttrs(["force_value", "agilite_value", "vue_value", "dexterite_value", "Taille", "constitution_value", "tab"], function(v) {
+        on("change:force_value change:agilite_value change:vue_value change:dexterite_value change:Taille change:constitution_value change:volonte_value", function() {
+            getAttrs(["force_value", "agilite_value", "vue_value", "dexterite_value", "Taille", "constitution_value", "volonte_value", "tab"], function(v) {
                 const tab = parseInt(v.tab);
                 if (tab === 11 || tab === 12) return; // Animal and Entité: manual
                 const force = parseInt(v.force_value) || 0;
@@ -2140,7 +2236,10 @@
                 const sust = Math.ceil(((taille - 5) / 4) + 1);
                 const domBase = Math.floor((taille + force) / 2);
                 const dom = domBase <= 7 ? -1 : Math.max(0, Math.floor((domBase - 10) / 2));
-                setAttrs({ melee_value: melee, tir_value: tir, lancer_value: lancer, derobee_value: derobee, const: seuil_constitution, sust: sust, dom: dom });
+                const volonte = parseInt(v.volonte_value) || 0;
+                const vie = Math.ceil((taille + constitution) / 2);
+                const endurance = Math.max(taille + constitution, vie + volonte);
+                setAttrs({ melee_value: melee, tir_value: tir, lancer_value: lancer, derobee_value: derobee, const: seuil_constitution, sust: sust, dom: dom, vie: vie, PV_total_max: vie, endurance: endurance, PE_total_max: endurance });
             });
         });
 
