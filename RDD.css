@@ -157,14 +157,19 @@ input.sheet-pc-tab:checked::before {
 .sheet-npcname {
     margin-top: 5px;
     margin-left: 20px;
-    height: 35px;
+    height: 40px;
     width: 380px;
     border: none;
+    border-top: 2px solid #d4af37;
+    border-bottom: 2px solid #d4af37;
     font-size: 22px;
     font-weight: bolder;
     text-transform: capitalize;
-    font-family: serif;
+    font-family: 'Abbot', serif;
     text-align: center;
+    color: #5a1a00;
+    background: transparent;
+    padding: 2px 0;
 }
 
 /* ===== ROLL TEMPLATE — BASE STRUCTURE (all RDD templates) ===== */
