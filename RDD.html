@@ -837,6 +837,11 @@
                     <input type="number" name="attr_chance_max_total" class="sheet-bulle" value="0">
                     <button type="roll" class="sheet-roll-btn" name="roll_Chance" value="&{template:RDD}{{name=Chance}} {{Roll=[[1D100cs<0cf>100]]}} {{difficulte=[[?{Difficulté ?|0}+@{etat_general}]]}}  {{attribut=[[@{chance_total}]]}} {{echec_part=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))+80]]}}  {{signif=[[floor(0.5*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{reussite_par=[[ceil(0.2*floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))]]}} {{cible=[[floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5))]]}} {{echec_tot=[[ceil(100-(100-floor((((?{Difficulté ?|0}+@{etat_general})/10)+1)*(@{chance_total}*5)))*0.1)+1]]}}">Chance</button>
                 </div>
+                <div class="sheet-recup-reve">
+                    <div class="title-separate">Récupération de Rêve</div>
+                    <button type="roll" class="sheet-roll-btn" name="roll_RecupReve" value="&{template:REVE}{{name=Récupération de Rêve}}{{Roll=[[1d8-1]]}}{{seven=[[7]]}}">Récupération de Rêve</button>
+                </div>
+
                 <div style="background-image:url(https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/bg_pc_attributes.jpg); width:450px; height:477px;margin-top:30px;">
                     <div style="margin-left:204px;"><!-- check box éthylisme-->
                         <div style="padding-top:38px"><input type="checkbox" name="attr_ethyl1"></div>
@@ -1588,6 +1593,26 @@
             </table>
     </rolltemplate>
     <!-- end roll template Vie -->
+
+    <rolltemplate class="sheet-rolltemplate-REVE">
+            <table style="table-layout:fixed; width:220px;">
+                <caption>{{name}}</caption>
+                <tr><td align="center" valign="middle" style="text-align:center; padding:6px 0;">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_dragon.png" />
+                </td></tr>
+                <tr><td style="text-align:center; font-weight:bold;">D8 : {{Roll}}</td></tr>
+                <tr><td align="center" valign="middle" style="text-align:center; padding:6px 0;">
+                    <img class="image" src="https://cdn.jsdelivr.net/gh/icotom/rdd-hypnos@master/images/banner_dragon.png" />
+                </td></tr>
+                {{#rollTotal() Roll seven}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; font-weight:bold; color:#7b3fa0;">Rêve de Dragon - Relancez !</td></tr>
+                {{/rollTotal() Roll seven}}
+                {{#rollLess() Roll seven}}
+                <tr><td style="text-align:center; font-size:14px; text-transform:none; color:#005500;">+{{Roll}} Point(s) de Rêve</td></tr>
+                {{/rollLess() Roll seven}}
+            </table>
+    </rolltemplate>
+    <!-- end roll template Reve -->
 
     <!-- Roll Template - jets des NPCs -->
     <rolltemplate class="sheet-rolltemplate-NPC-Skill">

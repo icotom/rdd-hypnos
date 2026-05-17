@@ -198,7 +198,8 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-SKILLS table,
 .sheet-rolltemplate-STRESS table,
 .sheet-rolltemplate-ENDURANCE table,
-.sheet-rolltemplate-VIE table {
+.sheet-rolltemplate-VIE table,
+.sheet-rolltemplate-REVE table {
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 10px;
@@ -214,7 +215,8 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-Animal caption,
 .sheet-rolltemplate-SKILLS caption,
 .sheet-rolltemplate-STRESS caption,
-.sheet-rolltemplate-ENDURANCE caption {
+.sheet-rolltemplate-ENDURANCE caption,
+.sheet-rolltemplate-REVE caption {
     font-size: 18px;
     padding: 8px 8px 6px;
     font-style: normal;
@@ -244,7 +246,8 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-SKILLS td,
 .sheet-rolltemplate-STRESS td,
 .sheet-rolltemplate-ENDURANCE td,
-.sheet-rolltemplate-VIE td {
+.sheet-rolltemplate-VIE td,
+.sheet-rolltemplate-REVE td {
     padding: 2px;
     font-size: 10px;
     font-style: normal;
@@ -266,6 +269,10 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-SKILLS table,
 .sheet-rolltemplate-ENDURANCE table {
     background: linear-gradient(to right bottom, #F6F4E6 60%, #C4C3B8);
+}
+
+.sheet-rolltemplate-REVE table {
+    background: linear-gradient(to right bottom, #EDE8F5 60%, #C8BDE0);
 }
 
 .sheet-rolltemplate-VIE table {
@@ -312,7 +319,8 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-SKILLS .inlinerollresult,
 .sheet-rolltemplate-STRESS .inlinerollresult,
 .sheet-rolltemplate-ENDURANCE .inlinerollresult,
-.sheet-rolltemplate-VIE .inlinerollresult {
+.sheet-rolltemplate-VIE .inlinerollresult,
+.sheet-rolltemplate-REVE .inlinerollresult {
     background-color: rgba(255,255,255,0.9);
     border-width: 1px;
     border-color: #BEAAA0;
@@ -587,6 +595,11 @@ input.sheet-pc-tab:checked::before {
     margin: 3px 0 2px 0;
 }
 
+.sheet-recup-reve {
+    margin: 10px 0;
+    text-align: center;
+}
+
 .sheet-tab2-stats {
     margin-top: 20px;
     margin-left: 0px;
@@ -797,7 +810,8 @@ input.sheet-pc-tab:checked::before {
 .sheet-rolltemplate-SKILLS .image,
 .sheet-rolltemplate-STRESS .image,
 .sheet-rolltemplate-ENDURANCE .image,
-.sheet-rolltemplate-VIE .image { display: block; width: 100%; }
+.sheet-rolltemplate-VIE .image,
+.sheet-rolltemplate-REVE .image { display: block; width: 100%; }
 
 /* ===== TAB 1 — ATTRIBUTE BUTTON FONT SIZE ===== */
 .sheet-char-grid button.sheet-roll-btn { font-size: 1em !important; }
