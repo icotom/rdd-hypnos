@@ -26,6 +26,7 @@
     <div class="sheet-info-grid">
         <div class="sheet-info-row">
             <span class="sheet-info-label">Heure de Naissance</span>
+            <input class="sheet-heure-symbol" type="text" name="attr_birth_symbol" readonly>
             <select name="attr_birth" style="width:150px;">
                 <option value="Le Vaisseau">Le Vaisseau</option>
                 <option value="La Sirène">La Sirène</option>
@@ -340,7 +341,8 @@
             <div class="sheet-info-grid">
                 <div class="sheet-info-row">
                     <span class="sheet-info-label">Heure de Naissance</span>
-                    <select name="attr_birth" style="width:150px;">
+                    <input class="sheet-heure-symbol" type="text" name="attr_birth_symbol" readonly>
+            <select name="attr_birth" style="width:150px;">
                         <option value="Le Vaisseau">Le Vaisseau</option>
                         <option value="La Sirène">La Sirène</option>
                         <option value="Le Faucon">Le Faucon</option>
@@ -2240,6 +2242,26 @@
                 const vie = Math.ceil((taille + constitution) / 2);
                 const endurance = Math.max(taille + constitution, vie + volonte);
                 setAttrs({ melee_value: melee, tir_value: tir, lancer_value: lancer, derobee_value: derobee, const: seuil_constitution, sust: sust, dom: dom, vie: vie, PV_total_max: vie, endurance: endurance, PE_total_max: endurance });
+            });
+        });
+
+        on("change:birth sheet:opened", function() {
+            getAttrs(["birth"], function(v) {
+                const map = {
+                    "Le Vaisseau": "A",
+                    "La Sirène": "B",
+                    "Le Faucon": "C",
+                    "La Couronne": "D",
+                    "Le Dragon": "E",
+                    "Les Épées": "F",
+                    "La Lyre": "G",
+                    "Le Serpent": "H",
+                    "Le Poisson Acrobate": "I",
+                    "L'Araignée": "J",
+                    "Le Roseau": "K",
+                    "Le Château Dormant": "L"
+                };
+                setAttrs({ birth_symbol: map[v.birth] || "" });
             });
         });
 
