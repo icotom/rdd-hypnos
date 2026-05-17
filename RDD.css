@@ -1,5 +1,5 @@
 /* ===== GOOGLE FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Skranji&display=swap');
 
 /* ===== CUSTOM FONTS ===== */
 @font-face {
@@ -155,6 +155,13 @@ input.sheet-pc-tab:checked::before {
     color: #5a1a00;
     background: transparent;
     padding: 2px 0;
+}
+
+.sheet-animalname {
+    font-family: 'Skranji', serif;
+    color: #5c2800;
+    border-top: 2px solid #cc6600;
+    border-bottom: 2px solid #cc6600;
 }
 
 .sheet-entitename {
